@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TabLayoutTextStyle" parent="TextAppearance.AppCompat.Medium">
+        <item name="textAllCaps">false</item>
+        <item name="fontFamily">sans-serif-medium</item>
+        <item name="android:textColor">@color/md_theme_onSurface</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="ToolbarTitleText" parent="TextAppearance.AppCompat.Title">
+        <item name="fontFamily">sans-serif-medium</item>
+        <item name="android:textColor">@color/md_theme_onSurface</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="DrawerItemText" parent="TextAppearance.AppCompat.Body1">
+        <item name="fontFamily">sans-serif-medium</item>
+        <item name="android:textColor">@color/md_theme_onSurface</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+</resources>

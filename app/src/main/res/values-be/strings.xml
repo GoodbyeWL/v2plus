@@ -1,0 +1,1509 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="app_name" translatable="false">v2plus</string>
+<string name="app_widget_name">v2plus</string>
+
+<string name="app_tile_name">v2plus</string>
+
+<string name="app_tile_first_use">Першае выкарыстанне гэтай функцыі, калі ласка, выкарыстоўвайце дадатак, каб дадаць сервер
+</string>
+
+<string name="navigation_drawer_open">
+Адкрыць панэль навігацыі
+</string>
+
+<string name="navigation_drawer_close">
+Закрыць панэль навігацыі
+</string>
+
+<string name="migration_success">
+Паспяховы перанос даных!
+</string>
+
+<string name="action_stop_service">
+Спыніць службу
+</string>
+
+<string name="migration_fail">
+Перанос дадзеных не выкананы!
+</string>
+
+<string name="pull_down_to_refresh">
+Пацягніце ўніз для абнаўлення!
+</string>
+
+<string name="notification_action_stop_v2ray">
+Спыніць
+</string>
+
+<string name="toast_permission_denied">
+Дазвол не атрымана
+</string>
+
+<string name="toast_permission_denied_notification">
+Дазвол на адлюстраванне апавяшчэнняў не атрымана
+</string>
+
+<string name="notification_action_more">
+Яшчэ ...
+</string>
+
+<string name="toast_services_start">
+Запуск службаў
+</string>
+
+<string name="toast_services_stop">
+Прыпынак службаў
+</string>
+
+<string name="toast_services_success">
+Службы паспяхова запушчаны
+</string>
+
+<string name="toast_services_failure">
+Збой пры запуску службаў
+</string>
+
+<string name="title_server">
+Профіль
+</string>
+
+<string name="menu_item_add_config">
+Дадаць профіль
+</string>
+
+<string name="menu_item_save_config">
+Захаваць профіль
+</string>
+
+<string name="menu_item_edit_config">
+Змяніць профіль
+</string>
+
+<string name="menu_item_edit_short">
+Змяніць
+</string>
+
+<string name="menu_item_del_config">
+Выдаліць профіль
+</string>
+
+<string name="menu_item_import_config_qrcode">
+Імпарт з QR-кода
+</string>
+
+<string name="menu_item_import_config_clipboard">
+Імпарт з буфера абмену
+</string>
+
+<string name="menu_item_import_config_local">
+Імпарт з файла
+</string>
+
+<string name="menu_item_import_config_policy_group">
+Дадаць групу
+</string>
+
+<string name="menu_item_import_config_manually_vmess">
+Ручны ўвод VMess
+</string>
+
+<string name="menu_item_import_config_manually_vless">
+Ручны ўвод VLESS
+</string>
+
+<string name="menu_item_import_config_manually_ss">
+Ручны ўвод Shadowsocks
+</string>
+
+<string name="menu_item_import_config_manually_socks">
+Ручны ўвод SOCKS
+</string>
+
+<string name="menu_item_import_config_manually_http">
+Ручны ўвод HTTP
+</string>
+
+<string name="menu_item_import_config_manually_trojan">
+Ручны ўвод Trojan
+</string>
+
+<string name="menu_item_import_config_manually_wireguard">
+Ручны ўвод WireGuard
+</string>
+
+<string name="menu_item_import_config_manually_hysteria">
+Ручны ўвод Hysteria
+</string>
+
+<string name="menu_item_import_config_manually_hysteria2">
+Ручны ўвод Hysteria2
+</string>
+
+<string name="menu_item_import_config_manually_tuic">
+Ручны ўвод TUIC
+</string>
+
+<string name="server_lab_uuid">
+UUID
+</string>
+
+<string name="server_lab_congestion_control">
+Кіраванне перагрузкай
+</string>
+
+<string name="server_lab_udp_relay_mode">
+Рэжым рэтрансляцыі UDP
+</string>
+
+<string name="server_lab_zero_rtt_handshake">
+Рукасцісканне 0-RTT
+</string>
+
+<string name="del_config_comfirm">
+Пацвярджаеце выдаленне?
+</string>
+
+<string name="del_invalid_config_comfirm">
+Выканайце праверку перад выдаленнем! Пацвярджаеце выдаленне?
+</string>
+
+<string name="server_lab_remarks">
+Назва
+</string>
+
+<string name="server_lab_address">
+Адрас
+</string>
+
+<string name="server_lab_port">
+Порт</string>
+
+<string name="server_lab_id">ID</string>
+
+<string name="server_lab_alterid">Альтэрнатыўны ID
+</string>
+
+<string name="server_lab_security">
+Бяспека
+</string>
+
+<string name="server_lab_network">
+Сетка
+</string>
+
+<string name="server_lab_more_function">
+Транспарт
+</string>
+
+<string name="server_lab_head_type">
+Тып загалоўка
+</string>
+
+<string name="server_lab_mode_type">
+Рэжым gRPC
+</string>
+
+<string name="server_lab_request_host">
+Вузел
+</string>
+
+<string name="server_lab_request_host_http">
+Вузел HTTP
+</string>
+
+<string name="server_lab_request_host_ws">
+Вузел WS
+</string>
+
+<string name="server_lab_request_host_httpupgrade">
+Вузел HTTPUpgrade
+</string>
+
+<string name="server_lab_request_host_xhttp">
+Вузел XHTTP
+</string>
+
+<string name="server_lab_request_host_h2">
+Вузел H2
+</string>
+
+<string name="server_lab_request_host_quic">
+Шыфраванне QUIC
+</string>
+
+<string name="server_lab_request_host_grpc">
+Паўнамоцтвы gRPC
+</string>
+
+<string name="server_lab_path">
+Шлях
+</string>
+
+<string name="server_lab_path_ws">
+Шлях WS
+</string>
+
+<string name="server_lab_path_httpupgrade">
+Шлях HTTPUpgrade
+</string>
+
+<string name="server_lab_path_xhttp">
+Шлях XHTTP
+</string>
+
+<string name="server_lab_path_h2">
+Шлях H2
+</string>
+
+<string name="server_lab_path_quic">
+Ключ QUIC
+</string>
+
+<string name="server_lab_path_kcp">
+Сід KCP
+</string>
+
+<string name="server_lab_path_grpc">
+Служба gRPC
+</string>
+
+<string name="server_lab_stream_security">TLS</string>
+
+<string name="server_lab_stream_fingerprint">
+Адбітак
+</string>
+
+<string name="server_lab_stream_alpn">ALPN</string>
+
+<string name="server_lab_allow_insecure">
+Дазваляць небяспечныя
+</string>
+
+<string name="server_lab_sni">SNI</string>
+
+<string name="server_lab_address3">
+Адрас
+</string>
+
+<string name="server_lab_port3">
+Порт
+</string>
+
+<string name="server_lab_id3">
+Пароль
+</string>
+
+<string name="server_lab_security3">
+Бяспека
+</string>
+
+<string name="server_lab_id4">
+Пароль (неабавязкова)
+</string>
+
+<string name="server_lab_security4">
+Карыстальнік (неабавязкова)
+</string>
+
+<string name="server_lab_encryption">
+Шыфраванне
+</string>
+
+<string name="server_lab_flow">
+Струмень
+</string>
+
+<string name="server_lab_public_key">
+Адкрыты ключ
+</string>
+
+<string name="server_lab_preshared_key">
+Дадатковы ключ шыфравання (неабавязкова)</string>
+
+<string name="server_lab_short_id">ShortID</string>
+
+<string name="server_lab_spider_x">SpiderX</string>
+
+<string name="server_lab_mldsa65_verify">mldsa65Verify</string>
+
+<string name="server_lab_secret_key">Закрыты ключ
+</string>
+
+<string name="server_lab_reserved">
+Reserved (неабавязкова, праз коску)
+</string>
+
+<string name="server_lab_local_address">
+Лакальны адрас (неабавязкова, IPv4/IPv6 праз коску)
+</string>
+
+<string name="server_lab_local_mtu">
+MTU (неабавязкова, па змаўчанні 1420)
+</string>
+
+<string name="toast_success">
+Паспяхова
+</string>
+
+<string name="toast_failure">
+Памылка
+</string>
+
+<string name="toast_none_data">
+Нічога няма
+</string>
+
+<string name="toast_incorrect_protocol">
+Няправільны пратакол
+</string>
+
+<string name="toast_decoding_failed">
+Немагчыма дэкадаваць
+</string>
+
+<string name="title_file_chooser">
+Абярыце профіль
+</string>
+
+<string name="toast_require_file_manager">
+Усталюйце файлавы менеджэр
+</string>
+
+<string name="server_customize_config">
+Змяніць профіль
+</string>
+
+<string name="toast_config_file_invalid">
+Няправільны профіль
+</string>
+
+<string name="server_lab_content">
+Дадзеныя
+</string>
+
+<string name="toast_none_data_clipboard">
+У буферы абмену дадзеных няма
+</string>
+
+<string name="toast_invalid_url">
+Няправільны URL
+</string>
+
+<string name="toast_insecure_url_protocol">
+Не выкарыстоўвайце небяспечны HTTP-пратакол у адрасе падпіскі
+</string>
+
+<string name="server_lab_need_inbound">
+Пераканайцеся, што ўваходны порт адпавядае настройкам.
+</string>
+
+<string name="toast_malformed_josn">
+Профіль пашкоджаны
+</string>
+
+<string name="server_lab_request_host6">
+Вузел (SNI) (неабавязкова)
+</string>
+
+<string name="toast_action_not_allowed">
+Гэта дзеянне забаронена
+</string>
+
+<string name="server_obfs_password">
+Пароль obfs
+</string>
+
+<string name="server_lab_port_hop">
+Змена партоў (перавызначае порт)
+</string>
+
+<string name="server_lab_port_hop_interval">
+Інтэрвал змены партоў
+</string>
+
+<string name="server_lab_bandwidth_down">
+Уваходная прапускная здольнасць (дапускаюцца: k/m/g/t)
+</string>
+
+<string name="server_lab_bandwidth_up">
+Выходная прапускная здольнасць (дапускаюцца: k/m/g/t)
+</string>
+
+<string name="server_lab_xhttp_mode">
+Рэжым XHTTP
+</string>
+
+<string name="server_lab_xhttp_extra">
+Неапрацаваны JSON XHTTP Extra, фармат: { XHTTPObject }
+</string>
+
+<string name="server_lab_ech_config_list">EchConfigList</string>
+
+<string name="server_lab_ech_force_query">EchForceQuery</string>
+
+<string name="server_lab_pinned_ca256">
+Адбітак сертыфіката (SHA-256)
+</string>
+
+<string name="toast_asset_copy_failed">
+Немагчыма скапіяваць файл, выкарыстоўвайце файлавы менеджэр
+</string>
+
+<string name="menu_item_add_asset">
+Дадаць рэсурс
+</string>
+
+<string name="menu_item_add_file">
+Дадаць файлы
+</string>
+
+<string name="menu_item_add_url">
+Дадаць URL
+</string>
+
+<string name="menu_item_scan_qrcode">
+Сканаваць QR-код
+</string>
+
+<string name="title_url">URL</string>
+
+<string name="menu_item_download_file">
+Загрузіць файлы
+</string>
+
+<string name="title_user_asset_add_url">
+Дадаць URL рэсурса</string>
+
+<string name="msg_file_not_found">Файл не знойдзены
+</string>
+
+<string name="msg_remark_is_duplicate">
+Назва ўжо існуе
+</string>
+
+<string name="asset_geo_files_sources">
+Крыніца геафайлаў (неабавязкова)
+</string>
+
+<string name="msg_dialog_progress">
+Загрузка…
+</string>
+
+<string name="menu_item_search">
+Пошук
+</string>
+
+<string name="menu_item_select_all">
+Выбраць усе
+</string>
+
+<string name="menu_item_invert_selection">
+Інвертаваць выбар
+</string>
+
+<string name="msg_enter_keywords">
+Увядзіце ключавое слова
+</string>
+
+<string name="switch_bypass_apps_mode">
+Рэжым абыходу
+</string>
+
+<string name="menu_item_select_proxy_app">
+Аўтавыбар прыкладанняў
+</string>
+
+<string name="msg_downloading_content">
+Загрузка дадзеных
+</string>
+
+<string name="menu_item_export_proxy_app">
+Экспарт у буфер абмену
+</string>
+
+<string name="menu_item_import_proxy_app">
+Імпарт з буфера абмену
+</string>
+
+<string name="per_app_proxy_settings">
+Выбар прыкладанняў
+</string>
+
+<string name="per_app_proxy_settings_enable">
+Выкарыстоўваць выбар прыкладанняў
+</string>
+
+<string name="show_system_apps">
+Паказваць сістэмныя праграмы
+</string>
+
+<string name="title_settings">
+Налады
+</string>
+
+<string name="title_advanced">
+Дадаткова
+</string>
+
+<string name="title_core_settings">
+Ядро
+</string>
+
+<string name="title_vpn_settings">VPN</string>
+
+<string name="title_pref_per_app_proxy">
+Проксі па прыкладаннях
+</string>
+
+<string name="summary_pref_per_app_proxy">
+Асноўны: абранае прыкладанне злучаецца праз проксі, не абранае - напроста; \n Рэжым абыходу: абранае прыкладанне злучаецца напроста, ня абранае - праз проксі.\nЁсць магчымасць аўтаматычнага выбару праксаваных прыкладанняў у меню.
+</string>
+
+<string name="title_pref_is_booted">
+Аўтападлучэнне
+</string>
+
+<string name="summary_pref_is_booted">
+Аўтаматычна падлучацца да абранага сервера пры запуску прыкладання (можа апынуцца няўдалым)
+</string>
+
+<string name="title_pref_auto_remove_invalid_after_test">
+Аўтавыдаленне непрацоўных профіляў
+</string>
+
+<string name="summary_pref_auto_remove_invalid_after_test">
+Аўтаматычнае выдаленне непрацоўных профіляў пасля праверкі (вынікі праверкі могуць быць недакладнымі; аднавіць выдаленыя профілі немагчыма)
+</string>
+
+<string name="title_pref_auto_sort_after_test">
+Аўтасартаванне профіляў
+</string>
+
+<string name="summary_pref_auto_sort_after_test">
+Аўтаматычная сартаванне профіляў пасля праверкі (вынікі праверкі могуць быць недакладнымі)
+</string>
+
+<string name="title_mux_settings">
+Мультыплекс
+</string>
+
+<string name="title_pref_mux_enabled">
+Уключыць мультыплекс
+</string>
+
+<string name="summary_pref_mux_enabled">
+Хутчэй, але гэта можа прывесці да нестабільнага злучэння.\nНіжэй можна наладзіць апрацоўку TCP, UDP і QUIC.
+</string>
+
+<string name="title_pref_mux_concurency">
+TCP-струмені (1-1024)
+</string>
+
+<string name="title_pref_mux_xudp_concurency">
+XUDP-струмені (1-1024)
+</string>
+
+<string name="title_pref_mux_xudp_quic">
+Апрацоўка QUIC у мультыплексным тунэлі
+</string>
+
+<string name="title_pref_speed_enabled">
+Паказваць хуткасць
+</string>
+
+<string name="summary_pref_speed_enabled">
+Паказваць бягучую хуткасць у апавяшчэнні.\nЗначок будзе мяняцца ў залежнасці ад выкарыстання.
+</string>
+
+<string name="title_pref_sniffing_enabled">
+Аналіз трафіку
+</string>
+
+<string name="summary_pref_sniffing_enabled">
+Спрабаваць вызначаць даменныя імёны ў пакетах (па змаўчанні ўключана)
+</string>
+
+<string name="title_pref_route_only_enabled">
+Дамен толькі для маршрутаў
+</string>
+
+<string name="summary_pref_route_only_enabled">
+Выкарыстоўваць даменнае імя толькі для маршрутызацыі і захоўваць мэтавы адрас у выглядзе IP.
+</string>
+
+<string name="title_pref_local_dns_enabled">
+Лакальны DNS</string>
+
+<string name="summary_pref_local_dns_enabled">Абслугоўванне выконваецца DNS-модулем ядра (у наладах маршрутызацыі рэкамендуецца абраць рэжым "Усё, акрамя LAN і Кітая")
+</string>
+
+<string name="title_pref_fake_dns_enabled">FakeDNS</string>
+
+<string name="summary_pref_fake_dns_enabled">
+Лакальная DNS вяртае падробленыя IP-адрасы (хутчэй, але можа не працаваць з некаторымі праграмамі)
+</string>
+
+<string name="title_pref_prefer_ipv6">
+Аддаваць перавагу IPv6
+</string>
+
+<string name="summary_pref_prefer_ipv6">
+Выкарыстоўваць маршрутызацыю IPv6 аддаваць перавагу IPv6-адрасу
+</string>
+
+<string name="title_pref_remote_dns">
+Выдалены DNS (апц.)
+</string>
+
+<string name="summary_pref_remote_dns">DNS</string>
+
+<string name="title_pref_vpn_dns">
+VPN DNS (толькі IPv4/v6)
+</string>
+
+<string name="title_pref_vpn_bypass_lan">
+Абыход LAN у VPN
+</string>
+
+<string name="title_pref_vpn_interface_address">
+Адрас інтэрфейсу VPN
+</string>
+
+<string name="title_pref_vpn_mtu">
+VPN MTU (па змаўчанні 1500)
+</string>
+
+<string name="title_pref_domestic_dns">
+Лакальны DNS (апц.)
+</string>
+
+<string name="summary_pref_domestic_dns">DNS</string>
+
+<string name="title_pref_dns_hosts">
+DNS hosts (дамен: адрас)
+</string>
+
+<string name="summary_pref_dns_hosts">
+дамен:адрас,…
+</string>
+
+<string name="title_pref_delay_test_url">
+URL праверкі затрымкі
+</string>
+
+<string name="summary_pref_delay_test_url">URL</string>
+
+<string name="title_pref_ip_api_url">
+URL праверкі IP
+</string>
+
+<string name="summary_pref_ip_api_url">URL</string>
+
+<string name="title_pref_proxy_sharing_enabled">
+Доступ з LAN
+</string>
+
+<string name="summary_pref_proxy_sharing_enabled">
+Іншыя прылады могуць падлучацца, выкарыстоўваючы ваш IP-адрас, каб выкарыстоўваць лакальны проксі. Выкарыстоўвайце толькі ў даверанай сетцы, каб пазбегнуць несанкцыянаванага падлучэння.
+</string>
+
+<string name="toast_warning_pref_proxysharing_short">
+Доступ з LAN дазволены, пераканайцеся, што вы знаходзіцеся ў даверанай сетцы
+</string>
+
+<string name="title_pref_allow_insecure">
+Дазволіць небяспечны TLS
+</string>
+
+<string name="summary_pref_allow_insecure">
+Для TLS па змаўчанні дазволеныя небяспечныя злучэнні
+</string>
+
+<string name="title_pref_socks_port">
+Лакальны SOCKS-порт
+</string>
+
+<string name="summary_pref_socks_port">
+Лакальны SOCKS-порт
+</string>
+
+<string name="title_pref_local_dns_port">
+Порт лакальнай DNS
+</string>
+
+<string name="summary_pref_local_dns_port">
+Порт лакальнай DNS
+</string>
+
+<string name="title_pref_confirm_remove">
+Пацвярджаць выдаленне профіля
+</string>
+
+<string name="summary_pref_confirm_remove">
+Абавязковае пацверджанне выдалення профіля
+</string>
+
+<string name="title_pref_start_scan_immediate">
+Сканаваць QR пры запуску
+</string>
+
+<string name="summary_pref_start_scan_immediate">
+Пачынаць сканаванне адразу пры запуску прыкладання або запускаць функцыю сканавання камерай або з выявы праз панэль інструментаў
+</string>
+
+<string name="title_pref_append_http_proxy">
+Дад. HTTP-проксі
+</string>
+
+<string name="summary_pref_append_http_proxy">
+HTTP-проксі будзе выкарыстоўвацца напрамую (з браўзэра і іншых падтрымных прыкладанняў), абыходзячы віртуальны сеткавы адаптар (Android 10+)
+</string>
+
+<string name="title_pref_double_column_display">
+2 калонкі профіляў
+</string>
+
+<string name="summary_pref_double_column_display">
+Спіс профіляў адлюстроўваецца двума слупкамі, што дазваляе паказаць больш інфармацыі на экране. Патрабуецца перазапуск дадатку.
+</string>
+
+<string name="title_pref_group_all_display">
+Укладка «Усе»
+</string>
+
+<string name="summary_pref_group_all_display">
+Паказваць дадатковую ўкладку з усімі профілямі груп
+</string>
+
+<string name="title_pref_feedback">
+Зваротная сувязь
+</string>
+
+<string name="summary_pref_feedback">
+Зваротная сувязь у Telegram</string>
+
+<string name="summary_pref_tg_group">Далучыцца да групы ў Telegram
+</string>
+
+<string name="toast_tg_app_not_found">
+Дадатак Telegram не знойдзена
+</string>
+
+<string name="title_privacy_policy">
+Палітыка прыватнасці
+</string>
+
+<string name="title_qr_code">
+QR-код
+</string>
+
+<string name="title_about">
+Аб дадатку
+</string>
+
+<string name="title_source_code">
+Зыходны код
+</string>
+
+<string name="title_oss_license">
+Ліцэнзіі адкрытага зыходнага кода
+</string>
+
+<string name="title_tg_channel">
+Telegram-канал
+</string>
+
+<string name="drawer_category_management">
+Упраўленне
+</string>
+
+<string name="drawer_category_useful">
+Карыснае
+</string>
+
+<string name="drawer_category_app">
+Прыкладанне
+</string>
+
+<string name="cust_title">
+Кастамізацыя
+</string>
+
+<string name="cust_preview">
+Прадпрагляд
+</string>
+
+<string name="cust_theme_presets">
+Гатовыя тэмы
+</string>
+
+<string name="cust_colors">
+Колеры ўручную
+</string>
+
+<string name="cust_accent">
+Акцэнтны колер
+</string>
+
+<string name="cust_bg_start">
+Фон (верх)
+</string>
+
+<string name="cust_bg_center">
+Фон (сярэдзіна)
+</string>
+
+<string name="cust_bg_end">
+Фон (ніз)
+</string>
+
+<string name="cust_card">
+Фон картак
+</string>
+
+<string name="cust_card_stroke">
+Абводка картак
+</string>
+
+<string name="cust_header_start">
+Градыент шапкі (пачатак)
+</string>
+
+<string name="cust_header_end">
+Градыент шапкі (канец)
+</string>
+
+<string name="cust_bg_image">
+Фонавая карцінка
+</string>
+
+<string name="cust_bg_from_gallery">
+Выбраць з галерэі
+</string>
+
+<string name="cust_bg_from_url">
+Загрузіць па URL
+</string>
+
+<string name="cust_bg_clear">
+Прыбраць карцінку
+</string>
+
+<string name="cust_advanced">
+Пашыраныя параметры
+</string>
+
+<string name="cust_server_radius">
+Скругленне картак сервераў
+</string>
+
+<string name="cust_bg_overlay_strength">
+Шчыльнасць зацямнення фону
+</string>
+
+<string name="cust_bg_url_title">
+Спасылка на малюнак
+</string>
+
+<string name="cust_bg_url_hint">https://example.com/background.jpg</string>
+
+<string name="cust_bg_set_success">
+Фонавая карцінка ўстаноўлена
+</string>
+
+<string name="cust_bg_set_failed">
+Не атрымалася ўсталяваць фонавую карцінку
+</string>
+
+<string name="cust_bg_url_invalid">
+Увядзіце карэктны URL
+</string>
+
+<string name="cust_reset">
+Скінуць па змаўчанні
+</string>
+
+<string name="cust_apply_hex">
+Ужыць
+</string>
+
+<string name="cust_restart_title">
+Патрабуецца перазапуск
+</string>
+
+<string name="cust_restart_message">
+Для поўнага прымянення новай тэмы неабходна перазапусціць прыкладанне. Перазапусціць зараз?
+</string>
+
+<string name="cust_restart_now">
+Перазапусціць
+</string>
+
+<string name="cust_restart_later">
+Пазней</string>
+
+<string name="cust_shape">Форма</string>
+<string name="cust_group_accent">Акцэнт</string>
+<string name="cust_group_background">Фон</string>
+<string name="cust_group_surfaces">Паверхні</string>
+<string name="cust_group_text">Тэкст</string>
+<string name="cust_group_status">Статус</string>
+<string name="cust_preview_sample_title">Прыклад сервера</string>
+<string name="cust_preview_connected">Падключана</string>
+<string name="cust_bg_none">Няма выявы</string>
+<string name="cust_bg_applied">Выява ўстаноўлена</string>
+<string name="cust_picker_suggested">Палітра</string>
+<string name="cust_picker_done">Гатова</string>
+<string name="cust_presets">Прэсеты</string>
+<string name="cust_fonts">Шрыфты</string>
+<string name="cust_font_family">Гарнітура</string>
+<string name="cust_font_scale">Маштаб шрыфту</string>
+<string name="cust_font_preview">Прыклад: дэманстрацыя шрыфту V2plus</string>
+
+<string name="title_pref_promotion">Садзейнічанне
+</string>
+
+<string name="title_pref_auto_update_subscription">
+Аўтаматычна абнаўляць падпіскі
+</string>
+
+<string name="summary_pref_auto_update_subscription">
+Аўтаматычнае абнаўленне падпісак у фонавым рэжыме з указаным інтэрвалам. У залежнасці ад прылады гэтая функцыя можа працаваць не заўсёды.
+</string>
+
+<string name="title_pref_auto_update_interval">
+Інтэрвал аўтаабнаўлення (хвілін, не менш за 15)
+</string>
+
+<string name="title_core_loglevel">
+Узровень логаў
+</string>
+
+<string name="title_outbound_domain_resolve_method">
+Дазвол даменаў выходных
+</string>
+
+<string name="title_mode">
+Рэжым
+</string>
+
+<string name="title_mode_help">
+Націсніце для атрымання дадатковай інфармацыі
+</string>
+
+<string name="title_language">
+Мова
+</string>
+
+<string name="title_ui_settings">
+Настройкі інтэрфейсу
+</string>
+
+<string name="title_pref_ui_mode_night">
+Тэма інтэрфейсу
+</string>
+
+<string name="title_pref_use_hev_tunnel">
+Выкарыстоўваць Hev Tunnel
+</string>
+
+<string name="summary_pref_use_hev_tunnel">
+Калі ўключана, TUN будзе выкарыстоўваць hev-socks5-tunnel; інакш будзе скарыстаны xray-core
+</string>
+
+<string name="title_pref_hev_tunnel_loglevel">
+Падрабязнасць часопіса HevTun
+</string>
+
+<string name="title_pref_hev_tunnel_rw_timeout">
+Таймаўт Hev Tunnel (сек)
+</string>
+
+<string name="title_logcat">
+Часопіс
+</string>
+
+<string name="logcat_copy">
+Капіяваць
+</string>
+
+<string name="logcat_clear">
+Ачысціць
+</string>
+
+<string name="title_service_restart">
+Перазапусціць сэрвіс
+</string>
+
+<string name="title_del_all_config">
+Выдаліць усе профілі
+</string>
+
+<string name="title_del_duplicate_config">
+Выдаліць дублікаты профіляў
+</string>
+
+<string name="title_del_invalid_config">
+Выдаліць непрацоўныя профілі
+</string>
+
+<string name="title_export_all">
+Экспарт усіх у буфер
+</string>
+
+<string name="title_sub_setting">
+Падпіскі
+</string>
+
+<string name="sub_setting_remarks">
+Назва
+</string>
+
+<string name="sub_setting_url">
+URL (неабавязкова)
+</string>
+
+<string name="sub_setting_user_agent">User Agent</string>
+
+<string name="sub_setting_filter">
+Назва фільтра
+</string>
+
+<string name="sub_setting_enable">
+Абнаўляць гэтую падпіску
+</string>
+
+<string name="sub_auto_update">
+Выкарыстоўваць аўтаабнаўленне
+</string>
+
+<string name="sub_allow_insecure_url">
+Дазваляць неабароненыя HTTP-адрасы
+</string>
+
+<string name="sub_setting_pre_profile">
+Папярэдні профіль проксі
+</string>
+
+<string name="sub_setting_next_profile">
+Наступны профіль проксі
+</string>
+
+<string name="sub_setting_pre_profile_tip">
+Профіль павінен быць унікальным
+</string>
+
+<string name="title_sub_update">
+Абнавіць падпіску
+</string>
+
+<string name="title_check_availability">
+Праверыць даступнасць
+</string>
+
+<string name="title_ping_all_server">
+Праверыць профілі
+</string>
+
+<string name="title_real_ping_all_server">
+Праверыць затрымку
+</string>
+
+<string name="title_user_asset_setting">
+Файлы рэсурсаў
+</string>
+
+<string name="title_sort_by_test_results">
+Сартаваць па затрымцы</string>
+
+<string name="title_filter_config">Фільтр профіляў
+</string>
+
+<string name="filter_config_all">
+Усё
+</string>
+
+<string name="title_del_duplicate_config_count">
+Выдалена дублікатаў профіляў: %d
+</string>
+
+<string name="title_del_config_count">
+Выдалена профіляў: %d
+</string>
+
+<string name="title_import_config_count">
+Імпартавана профіляў: %d
+</string>
+
+<string name="title_export_config_count">
+Экспартавана профіляў: %d
+</string>
+
+<string name="title_update_config_count">
+Абноўлена профіляў: %d
+</string>
+
+<string name="title_update_subscription_result">
+Абноўлена профіляў: %1$d (паспяхова: %2$d, памылак: %3$d, прапушчана: %4$d)
+</string>
+
+<string name="title_update_subscription_no_subscription">
+Няма падпісак
+</string>
+
+<string name="toast_server_not_found_in_group">
+Абраны профіль не знойдзены ў бягучай групе
+</string>
+
+<string name="toast_fragment_not_available">
+Фрагмент недаступны
+</string>
+
+<string name="title_locate_selected_config">
+Знайсці абраны профіль
+</string>
+
+<string name="tasker_start_service">
+Запуск службы
+</string>
+
+<string name="tasker_setting_confirm">
+Пацвердзіць
+</string>
+
+<string name="routing_settings_domain_strategy">
+Даменная стратэгія
+</string>
+
+<string name="routing_settings_title">
+Маршрутызацыя
+</string>
+
+<string name="routing_settings_tips">
+Увядзіце патрэбныя дамены/IP праз коску
+</string>
+
+<string name="routing_settings_save">
+Захаваць
+</string>
+
+<string name="routing_settings_delete">
+Ачысціць
+</string>
+
+<string name="routing_settings_rule_title">
+Правілы маршрутызацыі
+</string>
+
+<string name="routing_settings_add_rule">
+Дадаць правіла
+</string>
+
+<string name="routing_settings_import_predefined_rulesets">
+Выбраць гатовы набор
+</string>
+
+<string name="routing_settings_import_rulesets_tip">
+Існуючыя правілы будуць выдаленыя. Працягнуць?
+</string>
+
+<string name="routing_settings_import_rulesets_from_clipboard">
+Імпарт правілаў з буфера абмену
+</string>
+
+<string name="routing_settings_import_rulesets_from_qrcode">
+Імпарт правілаў з QR-кода
+</string>
+
+<string name="routing_settings_export_rulesets_to_clipboard">
+Экспарт правіл у буфер абмену
+</string>
+
+<string name="routing_settings_locked">
+Пастаяннае (захаваецца пры імпарце правілаў)
+</string>
+
+<string name="routing_settings_domain">
+Дамен
+</string>
+
+<string name="routing_settings_ip">IP</string>
+
+<string name="routing_settings_port">
+Порт
+</string>
+
+<string name="routing_settings_protocol">
+Пратакол
+</string>
+
+<string name="routing_settings_protocol_tip">[http,tls,bittorrent]</string>
+
+<string name="routing_settings_network">
+Сетка
+</string>
+
+<string name="routing_settings_network_tip">[udp|tcp]</string>
+
+<string name="routing_settings_outbound_tag">
+Выходнае злучэнне
+</string>
+
+<string name="connection_test_pending">
+Праверыць злучэнне
+</string>
+
+<string name="connection_test_testing">
+Праверка ...
+</string>
+
+<string name="connection_test_testing_count">
+Праверка профіляў (%d)
+</string>
+
+<string name="connection_test_available">
+Паспяхова: злучэнне заняло %d мс
+</string>
+
+<string name="connection_test_error">
+Збой праверкі інтэрнэт-злучэння: %s</string>
+
+<string name="connection_test_fail">Інтэрнэт недаступны
+</string>
+
+<string name="server_unavailable_short">
+Сервер недаступны
+</string>
+
+<string name="connection_test_error_status_code">
+Код памылкі: #%d
+</string>
+
+<string name="connection_connected">
+Злучана, націсніце для праверкі
+</string>
+
+<string name="connection_not_connected">
+Няма злучэння
+</string>
+
+<string name="connection_runing_task_left">
+Запушчана праверак: %s
+</string>
+
+<string name="import_subscription_success">
+Падпіска імпартавана
+</string>
+
+<string name="import_subscription_failure">
+Немагчыма імпартаваць падпіску
+</string>
+
+<string name="title_fragment_settings">
+Налады фрагментавання
+</string>
+
+<string name="title_pref_fragment_packets">
+Фрагментаванне пакетаў
+</string>
+
+<string name="title_pref_fragment_length">
+Даўжыня фрагмента (ад - да)
+</string>
+
+<string name="title_pref_fragment_interval">
+Інтэрвал фрагментаў (ад - да)
+</string>
+
+<string name="title_pref_fragment_enabled">
+Выкарыстоўваць фрагментаванне
+</string>
+
+<string name="update_check_for_update">
+Праверыць абнаўленне
+</string>
+
+<string name="update_already_latest_version">
+Устаноўлена апошняя версія
+</string>
+
+<string name="update_new_version_found">
+Знойдзена новая версія: %s
+</string>
+
+<string name="update_modal_message">
+Бягучая версія: %1$s
+Новая версія: %2$s
+
+Спампаваць і ўсталяваць зараз?
+</string>
+
+<string name="update_now">
+Абнавіць
+</string>
+
+<string name="update_skip">
+Прапусціць
+</string>
+
+<string name="update_downloading_title">
+Загрузка абнаўлення %s
+</string>
+
+<string name="update_download_progress">
+Прагрэс: %d%%
+</string>
+
+<string name="update_download_size">
+Памер: %1$s / %2$s
+</string>
+
+<string name="update_download_speed">
+Хуткасць: %s/с
+</string>
+
+<string name="update_download_eta">
+Засталося: %s
+</string>
+
+<string name="update_eta_unknown">
+разлік ...
+</string>
+
+<string name="update_size_unknown">
+невядома
+</string>
+
+<string name="update_download_failed">
+Не атрымалася спампаваць абнаўленне
+</string>
+
+<string name="update_check_pre_release">
+Шукаць папярэдні выпуск
+</string>
+
+<string name="update_checking_for_update">
+Праверка абнаўлення…
+</string>
+
+<string name="title_policy_group_type">
+Тып групы палітык
+</string>
+
+<string name="title_policy_group_subscription_id">
+З групы падпіскі
+</string>
+
+<string name="title_policy_group_subscription_filter">
+Назва фільтра
+</string>
+
+<string name="title_configuration_backup_restore">
+Рэзервовае капіраванне
+</string>
+
+<string name="title_configuration_backup">
+Стварыць рэзервовую копію
+</string>
+
+<string name="title_configuration_restore">
+Аднавіць з копіі
+</string>
+
+<string name="title_configuration_share">
+Падзяліцца копіяй
+</string>
+
+<string name="title_webdav_config_setting">
+Налады WebDAV
+</string>
+
+<string name="title_webdav_config_setting_unknown">
+Неабходна наладзіць WebDAV
+</string>
+
+<string name="title_webdav_url">
+URL сервера
+</string>
+
+<string name="title_webdav_user">
+Карыстальнік</string>
+
+<string name="title_webdav_pass">Пароль
+</string>
+
+    <string name="title_webdav_remote_path">
+    Выдалены шлях (неабавязкова)</string>
+
+    <!-- Content Transfer -->
+    <string name="content_transfer_title">Перадача</string>
+    <string name="content_transfer_readiness_title">Гатовасць</string>
+    <string name="content_transfer_fix_requirements">Выправіць патрэбныя ўмовы</string>
+    <string name="content_transfer_stealth_title">Схаваны QR</string>
+    <string name="content_transfer_stealth_desc">Хуткая перадача малога спіса (да 10-15 сервераў)</string>
+    <string name="content_transfer_generate_qr">Стварыць QR</string>
+    <string name="content_transfer_receive_qr">Сканаваць QR</string>
+    <string name="content_transfer_blue_title">Сіні мост</string>
+    <string name="content_transfer_blue_desc">Перадача праз Bluetooth (да 100+ сервераў)</string>
+    <string name="content_transfer_blue_send">Адправіць праз Bluetooth</string>
+    <string name="content_transfer_blue_receive">Атрымаць праз Bluetooth</string>
+    <string name="content_transfer_beacon_title">Маяк</string>
+    <string name="content_transfer_beacon_desc">Перадача праз Wi-Fi Direct (да 100 м)</string>
+    <string name="content_transfer_beacon_send_configs">Адправіць канфіги</string>
+    <string name="content_transfer_beacon_send_apk">Адправіць APK</string>
+    <string name="content_transfer_beacon_receive">Атрымаць праз Маяк</string>
+    <string name="content_transfer_stop">Стоп</string>
+    <string name="content_transfer_idle_info">Гатовы да перадачы</string>
+    <string name="content_transfer_status_idle">Чаканне</string>
+    <string name="content_transfer_status_qr_ready">QR гатовы</string>
+    <string name="content_transfer_status_receiving">Атрыманне...</string>
+    <string name="content_transfer_status_receiving_progress">Атрыманне файла %1$d/%2$d: %3$d%%</string>
+    <string name="content_transfer_status_receiving_file">Атрыманне файла %1$d/%2$d</string>
+    <string name="content_transfer_status_done">Гатова</string>
+    <string name="content_transfer_status_stopped">Спынена</string>
+    <string name="content_transfer_qr_info">Сервераў: %1$d, Памер: %2$d сімвалаў</string>
+    <string name="content_transfer_qr_too_dense">QR код занадта шчыльны</string>
+    <string name="content_transfer_invalid_payload">Няправільныя даныя</string>
+    <string name="content_transfer_pick_servers">Выберыце серверы</string>
+    <string name="content_transfer_pick_limit">Максімум 10 сервераў</string>
+    <string name="content_transfer_pick_required">Выберыце хаця б адзін сервер</string>
+    <string name="content_transfer_pick_files">Выберыце файлы</string>
+    <string name="content_transfer_pick_custom">Уласны выбар</string>
+    <string name="content_transfer_pick_files_required">Выберыце хаця б адзін файл</string>
+    <string name="content_transfer_start">Старт</string>
+    <string name="content_transfer_import_ok">Імпартавана: %1$d канфігаў, %2$d падпісак</string>
+    <string name="content_transfer_import_sub_created">Падпіска створана: %s</string>
+    <string name="content_transfer_import_fail">Імпарт не ўдался</string>
+    <string name="content_transfer_blue_start_fail">Не ўдалося запусціць Bluetooth</string>
+    <string name="content_transfer_blue_receive_fail">Не ўдалося атрымаць праз Bluetooth</string>
+    <string name="content_transfer_loc_req">Патрабуецца геалакацыя</string>
+    <string name="content_transfer_loc_req_msg">Для пошуку Bluetooth-прылад Android патрабуе ўключыць геалакацыю (GPS).</string>
+    <string name="content_transfer_beacon_start_fail">Не ўдалося запусціць Маяк</string>
+    <string name="content_transfer_beacon_receive_fail">Не ўдалося атрымаць праз Маяк</string>
+    <string name="content_transfer_files_saved_ok">Захавана %d файлаў</string>
+    <string name="content_transfer_bt_not_supported">Bluetooth не падтрымліваецца</string>
+    <string name="content_transfer_bt_enable_required">Bluetooth павінен быць уключаны</string>
+    <string name="content_transfer_bt_permission_required">Патрэбныя дазволы Bluetooth</string>
+    <string name="content_transfer_open_settings">Адкрыць налады</string>
+    <string name="content_transfer_beacon_network_required">Патрэбна падключэнне да сеткі</string>
+    <string name="content_transfer_try_anyway">Паспрабаваць усё роўна</string>
+    <string name="content_transfer_requirements_title">Патрэбныя ўмовы</string>
+    <string name="content_transfer_ready_bt_ok">Bluetooth гатовы</string>
+    <string name="content_transfer_ready_bt_missing">Bluetooth недаступны</string>
+    <string name="content_transfer_ready_bt_perm_ok">Дазволы атрыманы</string>
+    <string name="content_transfer_ready_bt_perm_missing">Няма дазволаў</string>
+    <string name="content_transfer_ready_network_ok">Сетка гатовая</string>
+    <string name="content_transfer_ready_network_missing">Няма сеткі</string>
+    <string name="content_transfer_ready_camera_ok">Камера гатовая</string>
+    <string name="content_transfer_ready_camera_missing">Няма камеры</string>
+    <string name="content_transfer_requirements_ready">Усе патрэбныя ўмовы выкананы</string>
+    <string name="content_transfer_blue_marker_info">Скануйце QR для атрымання праз Bluetooth</string>
+    <string name="content_transfer_beacon_marker_info">Скануйце QR для атрымання праз Маяк</string>
+    <string name="content_transfer_beacon_files_marker_info">Файлаў: %1$d, Хост: %2$s:%3$d</string>
+    <string name="content_transfer_beacon_apk_marker_info">APK: Хост %1$s:%2$d</string>
+    <string name="update_disabled_for_rustore">Абнаўленні адключаны для гэтай версіі.</string>
+    <string name="update_install_permission_required">Патрабуецца дазвол для ўсталявання абнаўлення.</string>
+
+    <!-- Customization -->
+</resources>

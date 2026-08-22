@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- Subscription Info Card -->
+    <LinearLayout
+        android:id="@+id/subscription_info_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/padding_spacing_dp16"
+        android:background="@drawable/bg_subscription_card"
+        android:orientation="vertical"
+        android:padding="@dimen/padding_spacing_dp16"
+        android:visibility="gone">
+
+        <!-- Header with icon and title -->
+        <LinearLayout
+            android:id="@+id/layout_subscription_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_subscriptions_24dp"
+                app:tint="@color/color_fab_active" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_spacing_dp8"
+                android:text="@string/subscription_info_title"
+                android:textColor="@color/md_theme_onSurface"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_subscription_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_spacing_dp8"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text=""
+                android:textColor="@color/md_theme_onSurfaceVariant"
+                android:textSize="14sp" />
+                
+            <ImageView
+                android:id="@+id/iv_subscription_expand"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_arrow_drop_down_24dp"
+                app:tint="@color/md_theme_onSurfaceVariant" />
+
+        </LinearLayout>
+
+        <!-- Expandable Content -->
+        <LinearLayout
+            android:id="@+id/layout_subscription_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_spacing_dp12"
+            android:orientation="vertical">
+
+            <!-- Expiry Info -->
+            <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_spacing_dp12"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_calendar_24dp"
+                android:tint="@color/md_theme_onSurfaceVariant" />
+
+            <TextView
+                android:id="@+id/tv_expiry_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_spacing_dp8"
+                android:text=""
+                android:textColor="@color/md_theme_onSurface"
+                android:textSize="14sp" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/tv_days_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/color_fab_active"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Expiry Progress Bar -->
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/progress_expiry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_spacing_dp8"
+            android:indeterminate="false"
+            android:max="100"
+            android:progress="0"
+            app:indicatorColor="@color/color_fab_active"
+            app:trackColor="@color/md_theme_surfaceVariant" />
+
+        <!-- Data Usage Info -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_spacing_dp12"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_data_usage_24dp"
+                android:tint="@color/md_theme_onSurfaceVariant" />
+
+            <TextView
+                android:id="@+id/tv_data_usage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_spacing_dp8"
+                android:text=""
+                android:textColor="@color/md_theme_onSurface"
+                android:textSize="14sp" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/tv_data_percent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/color_fab_active"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Data Usage Progress Bar -->
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/progress_data_usage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_spacing_dp8"
+            android:indeterminate="false"
+            android:max="100"
+            android:progress="0"
+            app:indicatorColor="@color/color_fab_active"
+            app:trackColor="@color/md_theme_surfaceVariant" />
+
+        <!-- Server Count -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_spacing_dp12"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_server_24dp"
+                android:tint="@color/md_theme_onSurfaceVariant" />
+
+            <TextView
+                android:id="@+id/tv_server_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_spacing_dp8"
+                android:text=""
+                android:textColor="@color/md_theme_onSurface"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <!-- Last Updated -->
+        <TextView
+            android:id="@+id/tv_last_updated"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_spacing_dp12"
+            android:gravity="end"
+            android:text=""
+            android:textColor="@color/md_theme_onSurfaceVariant"
+            android:textSize="12sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingTop="@dimen/padding_spacing_dp4"
+            android:paddingBottom="@dimen/padding_spacing_dp24"
+            android:scrollbars="vertical" />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</LinearLayout>

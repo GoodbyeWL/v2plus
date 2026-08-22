@@ -1,0 +1,38 @@
+[
+  {
+    "remarks": "Блокировать UDP 443 (QUIC)",
+    "outboundTag": "block",
+    "port": "443",
+    "network": "udp"
+  },
+  {
+    "remarks": "Локальные IP напрямую",
+    "outboundTag": "direct",
+    "ip": [
+      "geoip:private"
+    ]
+  },
+  {
+    "remarks": "Локальные домены напрямую",
+    "outboundTag": "direct",
+    "domain": [
+      "geosite:private"
+    ]
+  },
+  {
+    "remarks": "Стриминг и медиа через прокси",
+    "outboundTag": "proxy",
+    "domain": [
+      "geosite:youtube",
+      "geosite:netflix",
+      "geosite:tiktok",
+      "geosite:twitch",
+      "geosite:spotify"
+    ]
+  },
+  {
+    "remarks": "Остальное напрямую",
+    "port": "0-65535",
+    "outboundTag": "direct"
+  }
+]

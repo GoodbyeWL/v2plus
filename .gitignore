@@ -1,0 +1,54 @@
+# Gradle / Android
+.gradle/
+.kotlin/
+build/
+**/build/
+captures/
+.cxx/
+local.properties
+*.iml
+.idea/
+.vscode/
+*.apk
+*.ap_
+*.aab
+*.dex
+*.class
+*.log
+
+# Signing — never commit
+keystore.properties
+*.keystore
+*.jks
+*.p12
+
+# Xray core (~59 MB). Download into app/libs/ — see app/libs/README.md
+*.aar
+
+# Local dumps and subscription debug scripts
+*_decoded.txt
+decoded_*.txt
+fetch_exact_result.txt
+fetch_exact.ps1
+parse_sub.cmd
+test_parse.ps1
+
+# Temp / cache
+.tmp_aar/
+__pycache__/
+*.pyc
+*.tmp
+*.bak
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Site pages — hosted separately, not part of the Android tree
+/index.html
+/privacy_policy.html
+/docs/
+
+# Cursor
+.cursor/

@@ -1,0 +1,45 @@
+[
+  {
+    "remarks": "Обход BitTorrent",
+    "outboundTag": "direct",
+    "protocol": [
+      "bittorrent"
+    ]
+  },
+  {
+    "remarks": "Блокировать UDP 443 (QUIC)",
+    "outboundTag": "block",
+    "port": "443",
+    "network": "udp"
+  },
+  {
+    "remarks": "Локальные IP напрямую",
+    "outboundTag": "direct",
+    "ip": [
+      "geoip:private"
+    ]
+  },
+  {
+    "remarks": "Локальные домены напрямую",
+    "outboundTag": "direct",
+    "domain": [
+      "geosite:private"
+    ]
+  },
+  {
+    "remarks": "Мессенджеры и соцсети через прокси",
+    "outboundTag": "proxy",
+    "domain": [
+      "geosite:telegram",
+      "geosite:discord",
+      "geosite:facebook",
+      "geosite:twitter",
+      "geosite:instagram"
+    ]
+  },
+  {
+    "remarks": "Остальное напрямую",
+    "port": "0-65535",
+    "outboundTag": "direct"
+  }
+]

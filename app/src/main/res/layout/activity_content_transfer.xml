@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/padding_spacing_dp16">
+
+        <LinearLayout
+            android:id="@+id/layout_transfer_readiness"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/padding_spacing_dp12"
+            android:background="@drawable/bg_drawer_card"
+            android:orientation="vertical"
+            android:padding="@dimen/padding_spacing_dp12">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/content_transfer_readiness_title"
+                android:textColor="@color/md_theme_onSurface"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_spacing_dp8"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <View
+                    android:id="@+id/view_ready_bluetooth_dot"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:background="@drawable/bg_readiness_dot" />
+
+                <TextView
+                    android:id="@+id/tv_ready_bluetooth"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/padding_spacing_dp8"
+                    android:textColor="@color/md_theme_onSurfaceVariant"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_spacing_dp4"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <View
+                    android:id="@+id/view_ready_bt_permissions_dot"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:background="@drawable/bg_readiness_dot" />
+
+                <TextView
+                    android:id="@+id/tv_ready_bt_permissions"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/padding_spacing_dp8"
+                    android:textColor="@color/md_theme_onSurfaceVariant"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_spacing_dp4"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <View
+                    android:id="@+id/view_ready_network_dot"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:background="@drawable/bg_readiness_dot" />
+
+                <TextView
+                    android:id="@+id/tv_ready_network"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/padding_spacing_dp8"
+                    android:textColor="@color/md_theme_onSurfaceVariant"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_spacing_dp4"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <View
+                    android:id="@+id/view_ready_camera_dot"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:background="@drawable/bg_readiness_dot" />
+
+                <TextView
+                    android:id="@+id/tv_ready_camera"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/padding_spacing_dp8"
+                    android:textColor="@color/md_theme_onSurfaceVariant"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_fix_requirements"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_spacing_dp12"
+                android:text="@string/content_transfer_fix_requirements" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_transfer_stealth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_drawer_card"
+            android:orientation="vertical"
+            android:padding="@dimen/padding_spacing_dp12">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/content_transfer_stealth_title"
+                android:textColor="@color/md_theme_onSurface"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_spacing_dp4"
+                android:text="@string/content_transfer_stealth_desc"
+                android:textColor="@color/md_theme_onSurfaceVariant"
+                android:textSize="13sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_spacing_dp8"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_stealth_generate"
+                    style="@style/Widget.Material3.Button.TonalButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/content_transfer_generate_qr" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_stealth_receive"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/padding_spacing_dp8"
+                    android:layout_weight="1"
+                    android:text="@string/content_transfer_receive_qr" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_transfer_blue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_spacing_dp12"
+            android:background="@drawable/bg_drawer_card"
+            android:orientation="vertical"
+            android:padding="@dimen/padding_spacing_dp12">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/content_transfer_blue_title"
+                android:textColor="@color/md_theme_onSurface"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_spacing_dp4"
+                android:text="@string/content_transfer_blue_desc"
+                android:textColor="@color/md_theme_onSurfaceVariant"
+                android:textSize="13sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_spacing_dp8"
+                android:orientation="vertical">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_blue_send"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="2"
+                    android:text="@string/content_transfer_blue_send" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_blue_receive"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/padding_spacing_dp8"
+                    android:maxLines="2"
+                    android:text="@string/content_transfer_blue_receive" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_qr_preview"
+            android:layout_width="match_parent"
+            android:layout_height="340dp"
+            android:layout_marginTop="@dimen/padding_spacing_dp16"
+            android:background="@drawable/bg_drawer_card"
+            android:padding="@dimen/padding_spacing_dp12"
+            android:scaleType="fitCenter" />
+
+        <TextView
+            android:id="@+id/tv_qr_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_spacing_dp8"
+            android:textColor="@color/md_theme_onSurfaceVariant"
+            android:textSize="13sp" />
+
+        <LinearLayout
+            android:id="@+id/layout_transfer_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_spacing_dp12"
+            android:background="@drawable/bg_drawer_card"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="@dimen/padding_spacing_dp12">
+
+            <ProgressBar
+                android:id="@+id/progress_transfer"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:indeterminate="true"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tv_session_status"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_spacing_dp8"
+                android:layout_weight="1"
+                android:textColor="@color/md_theme_onSurface"
+                android:textSize="13sp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_stop_sessions"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/content_transfer_stop" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_transfer_log"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_spacing_dp12"
+            android:background="@drawable/bg_drawer_card"
+            android:orientation="vertical"
+            android:padding="@dimen/padding_spacing_dp12"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Журнал"
+                android:textColor="@color/md_theme_onSurface"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_transfer_log"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_spacing_dp8"
+                android:fontFamily="monospace"
+                android:textColor="@color/md_theme_onSurfaceVariant"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

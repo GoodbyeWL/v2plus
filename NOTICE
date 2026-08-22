@@ -1,0 +1,18 @@
+V2plus
+======
+
+This program is a modified version of v2rayNG:
+https://github.com/2dust/v2rayNG
+
+Copyright (C) 2dust and contributors
+Copyright (C) V2plus contributors
+
+Licensed under the GNU General Public License, version 3.
+See the LICENSE file for the full text.
+
+Bundled / related components
+----------------------------
+- Xray core via AndroidLibXrayLite (LGPL-3.0)
+  https://github.com/2dust/AndroidLibXrayLite
+- hev-socks5-tunnel native libraries
+  https://github.com/heiher/hev-socks5-tunnel

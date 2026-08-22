@@ -1,0 +1,10 @@
+* text=auto
+*.kt text
+*.kts text
+*.xml text
+*.md text
+gradlew text eol=lf
+*.bat text eol=crlf
+*.so binary
+*.png binary
+*.jar binary

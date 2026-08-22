@@ -1,0 +1,18 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- Shield filled -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M12,1L3,5v6c0,5.55 3.84,10.74 9,12 5.16,-1.26 9,-6.45 9,-12V5L12,1z" />
+    <!-- V letter cutout -->
+    <path
+        android:fillColor="#000000"
+        android:pathData="M8.5,7.5L12,15 15.5,7.5 13.5,7.5 12,11.5 10.5,7.5z" />
+    <!-- Down arrow for download/direct -->
+    <path
+        android:fillColor="#000000"
+        android:pathData="M10,16h4l-2,2z" />
+</vector>

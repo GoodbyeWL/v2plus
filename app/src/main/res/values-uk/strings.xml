@@ -1,0 +1,1446 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="app_name" translatable="false">v2plus</string>
+<string name="app_widget_name">v2plus</string>
+
+<string name="app_tile_name">v2plus</string>
+
+<string name="app_tile_first_use">Перше використання цієї функції, будь ласка, використовуйте програму, щоб додати сервер
+</string>
+
+<string name="navigation_drawer_open">
+Відкрити панель навігації
+</string>
+
+<string name="navigation_drawer_close">
+Закрити панель навігації
+</string>
+
+<string name="migration_success">
+Успішне перенесення даних!
+</string>
+
+<string name="action_stop_service">
+Зупинити службу
+</string>
+
+<string name="migration_fail">
+Перенесення даних не виконано!
+</string>
+
+<string name="pull_down_to_refresh">
+Потягніть вниз!
+</string>
+
+<string name="notification_action_stop_v2ray">
+Зупинити
+</string>
+
+<string name="toast_permission_denied">
+Дозвіл не отримано
+</string>
+
+<string name="toast_permission_denied_notification">
+Дозвіл на відображення повідомлень не отримано
+</string>
+
+<string name="notification_action_more">
+Ще ...
+</string>
+
+<string name="toast_services_start">
+Запуск служб
+</string>
+
+<string name="toast_services_stop">
+Зупинка служб
+</string>
+
+<string name="toast_services_success">
+Служби успішно запущені
+</string>
+
+<string name="toast_services_failure">
+Збій під час запуску служб
+</string>
+
+<string name="title_server">
+Профіль
+</string>
+
+<string name="menu_item_add_config">
+Додати профіль
+</string>
+
+<string name="menu_item_save_config">
+Зберегти профіль
+</string>
+
+<string name="menu_item_edit_config">
+Змінити профіль
+</string>
+
+<string name="menu_item_edit_short">
+Змінити
+</string>
+
+<string name="menu_item_del_config">
+Видалити профіль
+</string>
+
+<string name="menu_item_import_config_qrcode">
+Імпорт з QR-коду
+</string>
+
+<string name="menu_item_import_config_clipboard">
+Імпорт із буфера обміну
+</string>
+
+<string name="menu_item_import_config_local">
+Імпорт із файлу
+</string>
+
+<string name="menu_item_import_config_policy_group">
+Додати групу
+</string>
+
+<string name="menu_item_import_config_manually_vmess">
+Ручне введення VMess
+</string>
+
+<string name="menu_item_import_config_manually_vless">
+Ручне введення VLESS
+</string>
+
+<string name="menu_item_import_config_manually_ss">
+Ручне введення Shadowsocks
+</string>
+
+<string name="menu_item_import_config_manually_socks">
+Ручне введення SOCKS
+</string>
+
+<string name="menu_item_import_config_manually_http">
+Ручне введення HTTP
+</string>
+
+<string name="menu_item_import_config_manually_trojan">
+Ручне введення Trojan
+</string>
+
+<string name="menu_item_import_config_manually_wireguard">
+Ручне введення WireGuard
+</string>
+
+<string name="menu_item_import_config_manually_hysteria">
+Ручне введення Hysteria
+</string>
+
+<string name="menu_item_import_config_manually_hysteria2">
+Ручне введення Hysteria2
+</string>
+
+<string name="menu_item_import_config_manually_tuic">
+Ручне введення TUIC
+</string>
+
+<string name="server_lab_uuid">
+UUID
+</string>
+
+<string name="server_lab_congestion_control">
+Контроль перевантаження
+</string>
+
+<string name="server_lab_udp_relay_mode">
+Режим ретрансляції UDP
+</string>
+
+<string name="server_lab_zero_rtt_handshake">
+Рукостискання 0-RTT
+</string>
+
+<string name="del_config_comfirm">
+Чи підтверджуєте видалення?
+</string>
+
+<string name="del_invalid_config_comfirm">
+Виконайте перевірку перед видаленням! Чи підтверджуєте видалення?
+</string>
+
+<string name="server_lab_remarks">
+Назва
+</string>
+
+<string name="server_lab_address">
+Адреса
+</string>
+
+<string name="server_lab_port">
+Порт</string>
+
+<string name="server_lab_id">ID</string>
+
+<string name="server_lab_alterid">Альтернативний ID
+</string>
+
+<string name="server_lab_security">
+Безпека
+</string>
+
+<string name="server_lab_network">
+Мережа
+</string>
+
+<string name="server_lab_more_function">
+Транспорт
+</string>
+
+<string name="server_lab_head_type">
+Тип заголовка
+</string>
+
+<string name="server_lab_mode_type">
+Режим gRPC
+</string>
+
+<string name="server_lab_request_host">
+Вузол
+</string>
+
+<string name="server_lab_request_host_http">
+Вузол HTTP
+</string>
+
+<string name="server_lab_request_host_ws">
+Вузол WS
+</string>
+
+<string name="server_lab_request_host_httpupgrade">
+Вузол HTTPUpgrade
+</string>
+
+<string name="server_lab_request_host_xhttp">
+Вузол XHTTP
+</string>
+
+<string name="server_lab_request_host_h2">
+Вузол H2
+</string>
+
+<string name="server_lab_request_host_quic">
+Шифрування QUIC
+</string>
+
+<string name="server_lab_request_host_grpc">
+Повноваження gRPC
+</string>
+
+<string name="server_lab_path">
+Шлях
+</string>
+
+<string name="server_lab_path_ws">
+Шлях WS
+</string>
+
+<string name="server_lab_path_httpupgrade">
+Шлях HTTPUpgrade
+</string>
+
+<string name="server_lab_path_xhttp">
+Шлях XHTTP
+</string>
+
+<string name="server_lab_path_h2">
+Шлях H2
+</string>
+
+<string name="server_lab_path_quic">
+Ключ QUIC
+</string>
+
+<string name="server_lab_path_kcp">
+Сід KCP
+</string>
+
+<string name="server_lab_path_grpc">
+Служба gRPC
+</string>
+
+<string name="server_lab_stream_security">TLS</string>
+
+<string name="server_lab_stream_fingerprint">
+Відбиток
+</string>
+
+<string name="server_lab_stream_alpn">ALPN</string>
+
+<string name="server_lab_allow_insecure">
+Дозволяти небезпечні
+</string>
+
+<string name="server_lab_sni">SNI</string>
+
+<string name="server_lab_address3">
+Адреса
+</string>
+
+<string name="server_lab_port3">
+Порт
+</string>
+
+<string name="server_lab_id3">
+Пароль
+</string>
+
+<string name="server_lab_security3">
+Безпека
+</string>
+
+<string name="server_lab_id4">
+Пароль (необов’язково)
+</string>
+
+<string name="server_lab_security4">
+Користувач (необов’язково)
+</string>
+
+<string name="server_lab_encryption">
+Шифрування
+</string>
+
+<string name="server_lab_flow">
+Потік
+</string>
+
+<string name="server_lab_public_key">
+Відкритий ключ
+</string>
+
+<string name="server_lab_preshared_key">
+Додатковий ключ шифрування (необов’язково)</string>
+
+<string name="server_lab_short_id">ShortID</string>
+
+<string name="server_lab_spider_x">SpiderX</string>
+
+<string name="server_lab_mldsa65_verify">mldsa65Verify</string>
+
+<string name="server_lab_secret_key">Закритий ключ
+</string>
+
+<string name="server_lab_reserved">
+Reserved (необов’язково, через кому)
+</string>
+
+<string name="server_lab_local_address">
+Локальна адреса (необов’язково, IPv4/IPv6 через кому)
+</string>
+
+<string name="server_lab_local_mtu">
+MTU (необов’язково, за замовчуванням 1420)
+</string>
+
+<string name="toast_success">
+Успішно
+</string>
+
+<string name="toast_failure">
+Помилка
+</string>
+
+<string name="toast_none_data">
+Нічого ні
+</string>
+
+<string name="toast_incorrect_protocol">
+Неправильний протокол
+</string>
+
+<string name="toast_decoding_failed">
+Неможливо декодувати
+</string>
+
+<string name="title_file_chooser">
+Виберіть профіль
+</string>
+
+<string name="toast_require_file_manager">
+Встановіть файловий менеджер
+</string>
+
+<string name="server_customize_config">
+Змінити профіль
+</string>
+
+<string name="toast_config_file_invalid">
+Неправильний профіль
+</string>
+
+<string name="server_lab_content">
+Дані
+</string>
+
+<string name="toast_none_data_clipboard">
+У буфері обміну немає даних
+</string>
+
+<string name="toast_invalid_url">
+Неправильна URL
+</string>
+
+<string name="toast_insecure_url_protocol">
+Не використовуйте небезпечний протокол HTTP на адресу передплати
+</string>
+
+<string name="server_lab_need_inbound">
+Переконайтеся, що вхідний порт відповідає параметрам
+</string>
+
+<string name="toast_malformed_josn">
+Профіль пошкоджено
+</string>
+
+<string name="server_lab_request_host6">
+Вузол (SNI) (необов’язково)
+</string>
+
+<string name="toast_action_not_allowed">
+Ця дія заборонена
+</string>
+
+<string name="server_obfs_password">
+Пароль obfs
+</string>
+
+<string name="server_lab_port_hop">
+Зміна портів (перевизначає порт)
+</string>
+
+<string name="server_lab_port_hop_interval">
+Інтервал зміни портів
+</string>
+
+<string name="server_lab_bandwidth_down">
+Вхідна пропускна спроможність (допускаються: k/m/g/t)
+</string>
+
+<string name="server_lab_bandwidth_up">
+Вихідна пропускна спроможність (допускаються: k/m/g/t)
+</string>
+
+<string name="server_lab_xhttp_mode">
+Режим XHTTP
+</string>
+
+<string name="server_lab_xhttp_extra">
+Необроблений JSON XHTTP Extra, формат: { XHTTPObject }
+</string>
+
+<string name="server_lab_ech_config_list">EchConfigList</string>
+
+<string name="server_lab_ech_force_query">EchForceQuery</string>
+
+<string name="server_lab_pinned_ca256">
+Відбиток сертифіката (SHA-256)
+</string>
+
+<string name="toast_asset_copy_failed">
+Неможливо скопіювати файл, використовуйте менеджер файлу
+</string>
+
+<string name="menu_item_add_asset">
+Додати ресурс
+</string>
+
+<string name="menu_item_add_file">
+Додати файли
+</string>
+
+<string name="menu_item_add_url">
+Додати URL
+</string>
+
+<string name="menu_item_scan_qrcode">
+Сканувати QR-код
+</string>
+
+<string name="title_url">URL</string>
+
+<string name="menu_item_download_file">
+Завантажити файли
+</string>
+
+<string name="title_user_asset_add_url">
+Додати URL ресурсу</string>
+
+<string name="msg_file_not_found">Файл не знайдено
+</string>
+
+<string name="msg_remark_is_duplicate">
+Назва вже існує
+</string>
+
+<string name="asset_geo_files_sources">
+Джерело геофайлів (необов’язково)
+</string>
+
+<string name="msg_dialog_progress">
+Завантаження...
+</string>
+
+<string name="menu_item_search">
+Пошук
+</string>
+
+<string name="menu_item_select_all">
+Вибрати все
+</string>
+
+<string name="menu_item_invert_selection">
+Інвертувати вибір
+</string>
+
+<string name="msg_enter_keywords">
+Введіть ключове слово
+</string>
+
+<string name="switch_bypass_apps_mode">
+Режим обходу
+</string>
+
+<string name="menu_item_select_proxy_app">
+Автовибір додатків
+</string>
+
+<string name="msg_downloading_content">
+Завантаження даних
+</string>
+
+<string name="menu_item_export_proxy_app">
+Експорт у буфер обміну
+</string>
+
+<string name="menu_item_import_proxy_app">
+Імпорт із буфера обміну
+</string>
+
+<string name="per_app_proxy_settings">
+Вибір додатків
+</string>
+
+<string name="per_app_proxy_settings_enable">
+Використовувати вибір програм
+</string>
+
+<string name="show_system_apps">
+Показувати системні програми
+</string>
+
+<string name="title_settings">
+Налаштування
+</string>
+
+<string name="title_advanced">
+Додатково
+</string>
+
+<string name="title_core_settings">
+Ядро
+</string>
+
+<string name="title_vpn_settings">VPN</string>
+
+<string name="title_pref_per_app_proxy">
+Проксі за програмами
+</string>
+
+<string name="summary_pref_per_app_proxy">
+Основний: вибрана програма з’єднується через проксі, не вибрана — безпосередньо;\nРежим обходу: вибрана програма з’єднується безпосередньо, не вибрана — через проксі.\nЄ можливість автоматичного вибору програм, що проксуються, в меню.
+</string>
+
+<string name="title_pref_is_booted">
+Автопідключення
+</string>
+
+<string name="summary_pref_is_booted">
+Автоматично підключатися до вибраного сервера під час запуску програми (може виявитися невдалим)
+</string>
+
+<string name="title_pref_auto_remove_invalid_after_test">
+Автовидалення неробочих профілів
+</string>
+
+<string name="summary_pref_auto_remove_invalid_after_test">
+Автоматичне видалення неробочих профілів після перевірки (результати перевірки можуть бути неточними; відновити видалені профілі неможливо)
+</string>
+
+<string name="title_pref_auto_sort_after_test">
+Автосортування профілів
+</string>
+
+<string name="summary_pref_auto_sort_after_test">
+Автоматичне сортування профілів після перевірки (результати перевірки можуть бути неточними)
+</string>
+
+<string name="title_mux_settings">
+Мультиплекс
+</string>
+
+<string name="title_pref_mux_enabled">
+Увімкнути мультиплекс
+</string>
+
+<string name="summary_pref_mux_enabled">
+Швидше, але це може призвести до нестабільного з’єднання. Нижче можна налаштувати обробку TCP, UDP і QUIC.
+</string>
+
+<string name="title_pref_mux_concurency">
+TCP-потоки (1-1024)
+</string>
+
+<string name="title_pref_mux_xudp_concurency">
+XUDP-потоки (1-1024)
+</string>
+
+<string name="title_pref_mux_xudp_quic">
+Обробка QUIC у мультиплексному тунелі
+</string>
+
+<string name="title_pref_speed_enabled">
+Показувати швидкість
+</string>
+
+<string name="summary_pref_speed_enabled">
+Показувати поточну швидкість у повідомленні.\nЗначок змінюватиметься в залежності від використання.
+</string>
+
+<string name="title_pref_sniffing_enabled">
+Аналіз трафіку
+</string>
+
+<string name="summary_pref_sniffing_enabled">
+Намагатись визначати доменні імена в пакетах (за замовчуванням увімкнено)
+</string>
+
+<string name="title_pref_route_only_enabled">
+Домен лише для маршрутів
+</string>
+
+<string name="summary_pref_route_only_enabled">
+Використовувати доменне ім’я лише для маршрутизації та зберігати цільову адресу у вигляді IP.
+</string>
+
+<string name="title_pref_local_dns_enabled">
+Локальний DNS</string>
+
+<string name="summary_pref_local_dns_enabled">Обслуговування виконується DNS-модулем ядра (у налаштуваннях маршрутизації рекомендується вибрати режим «Всі, крім LAN та Китаю»)
+</string>
+
+<string name="title_pref_fake_dns_enabled">FakeDNS</string>
+
+<string name="summary_pref_fake_dns_enabled">
+Локальна DNS повертає підроблені IP-адреси (швидше, але може не працювати з деякими програмами)
+</string>
+
+<string name="title_pref_prefer_ipv6">
+Віддавати перевагу IPv6
+</string>
+
+<string name="summary_pref_prefer_ipv6">
+Використовувати маршрутизацію IPv6 віддавати перевагу IPv6-адресі
+</string>
+
+<string name="title_pref_remote_dns">
+Видалений DNS (опц.)
+</string>
+
+<string name="summary_pref_remote_dns">DNS</string>
+
+<string name="title_pref_vpn_dns">
+VPN DNS (лише IPv4/v6)
+</string>
+
+<string name="title_pref_vpn_bypass_lan">
+Обхід LAN у VPN
+</string>
+
+<string name="title_pref_vpn_interface_address">
+Адреса інтерфейсу VPN
+</string>
+
+<string name="title_pref_vpn_mtu">
+VPN MTU (за замовчуванням 1500)
+</string>
+
+<string name="title_pref_domestic_dns">
+Локальний DNS (опц.)
+</string>
+
+<string name="summary_pref_domestic_dns">DNS</string>
+
+<string name="title_pref_dns_hosts">
+DNS hosts (домен:адреса)
+</string>
+
+<string name="summary_pref_dns_hosts">
+домен: адреса, ...
+</string>
+
+<string name="title_pref_delay_test_url">
+URL перевірки затримки
+</string>
+
+<string name="summary_pref_delay_test_url">URL</string>
+
+<string name="title_pref_ip_api_url">
+URL перевірки IP
+</string>
+
+<string name="summary_pref_ip_api_url">URL</string>
+
+<string name="title_pref_proxy_sharing_enabled">
+Доступ до LAN
+</string>
+
+<string name="summary_pref_proxy_sharing_enabled">
+Інші пристрої можуть підключатися, використовуючи вашу IP-адресу, щоб використовувати локальний проксі. Використовуйте лише у довіреній мережі, щоб уникнути несанкціонованого підключення.
+</string>
+
+<string name="toast_warning_pref_proxysharing_short">
+Доступ із LAN дозволено, переконайтеся, що ви знаходитесь у довіреній мережі
+</string>
+
+<string name="title_pref_allow_insecure">
+Дозволити небезпечний TLS
+</string>
+
+<string name="summary_pref_allow_insecure">
+За умовчанням TLS дозволено небезпечні з’єднання
+</string>
+
+<string name="title_pref_socks_port">
+Локальний SOCKS-порт
+</string>
+
+<string name="summary_pref_socks_port">
+Локальний SOCKS-порт
+</string>
+
+<string name="title_pref_local_dns_port">
+Порт локальної DNS
+</string>
+
+<string name="summary_pref_local_dns_port">
+Порт локальної DNS
+</string>
+
+<string name="title_pref_confirm_remove">
+Підтверджувати видалення профілю
+</string>
+
+<string name="summary_pref_confirm_remove">
+Обов’язкове підтвердження видалення профілю
+</string>
+
+<string name="title_pref_start_scan_immediate">
+Сканувати QR під час запуску
+</string>
+
+<string name="summary_pref_start_scan_immediate">
+Починати сканування відразу при запуску програми або запускати функцію сканування камерою або зображення через панель інструментів
+</string>
+
+<string name="title_pref_append_http_proxy">
+Дод. HTTP-проксі
+</string>
+
+<string name="summary_pref_append_http_proxy">
+HTTP-проксі буде використовуватися безпосередньо (з браузера та інших підтримуючих програм), минаючи віртуальний мережевий адаптер (Android 10+)
+</string>
+
+<string name="title_pref_double_column_display">
+2 колонки профілів
+</string>
+
+<string name="summary_pref_double_column_display">
+Список профілів відображається двома шпальтами, що дозволяє показати більше інформації на екрані. Потрібно перезапустити програму.
+</string>
+
+<string name="title_pref_group_all_display">
+Вкладка «Всі»
+</string>
+
+<string name="summary_pref_group_all_display">
+Показувати додаткову вкладку з усіма профілями груп
+</string>
+
+<string name="title_pref_feedback">
+Зворотній зв’язок
+</string>
+
+<string name="summary_pref_feedback">
+Зворотній зв’язок у Telegram</string>
+
+<string name="summary_pref_tg_group">Приєднатися до групи в Telegram
+</string>
+
+<string name="toast_tg_app_not_found">
+Додаток Telegram не знайдено
+</string>
+
+<string name="title_privacy_policy">
+Політика конфіденційності
+</string>
+
+<string name="title_qr_code">
+QR-код
+</string>
+
+<string name="title_about">
+Про додаток
+</string>
+
+<string name="title_source_code">
+Вихідний код
+</string>
+
+<string name="title_oss_license">
+Ліцензії відкритого вихідного коду
+</string>
+
+<string name="title_tg_channel">
+Telegram-канал
+</string>
+
+<string name="drawer_category_management">
+Управління
+</string>
+
+<string name="drawer_category_useful">
+Корисне
+</string>
+
+<string name="drawer_category_app">
+Додаток
+</string>
+
+<string name="cust_title">
+Кастомізація
+</string>
+
+<string name="cust_preview">
+Передпрогляд
+</string>
+
+<string name="cust_theme_presets">
+Готові теми
+</string>
+
+<string name="cust_colors">
+Кольори вручну
+</string>
+
+<string name="cust_accent">
+Акцентний колір
+</string>
+
+<string name="cust_bg_start">
+Фон (верх)
+</string>
+
+<string name="cust_bg_center">
+Фон (середина)
+</string>
+
+<string name="cust_bg_end">
+Фон (низ)
+</string>
+
+<string name="cust_card">
+Фон карток
+</string>
+
+<string name="cust_card_stroke">
+Обведення карток
+</string>
+
+<string name="cust_header_start">
+Градієнт шапки (початок)
+</string>
+
+<string name="cust_header_end">
+Градієнт шапки (кінець)
+</string>
+
+<string name="cust_bg_image">
+Фонова картинка
+</string>
+
+<string name="cust_bg_from_gallery">
+Вибрати із галереї
+</string>
+
+<string name="cust_bg_from_url">
+Завантажити за URL
+</string>
+
+<string name="cust_bg_clear">
+Прибрати картинку
+</string>
+
+<string name="cust_advanced">
+Розширені параметри
+</string>
+
+<string name="cust_server_radius">
+Заокруглення карток серверів
+</string>
+
+<string name="cust_bg_overlay_strength">
+Щільність затемнення фону
+</string>
+
+<string name="cust_bg_url_title">
+Посилання на зображення
+</string>
+
+<string name="cust_bg_url_hint">https://example.com/background.jpg</string>
+
+<string name="cust_bg_set_success">
+Фонову картинку встановлено
+</string>
+
+<string name="cust_bg_set_failed">
+Не вдалося встановити фонову картинку
+</string>
+
+<string name="cust_bg_url_invalid">
+Введіть правильний URL
+</string>
+
+<string name="cust_reset">
+Скинути за замовчуванням
+</string>
+
+<string name="cust_apply_hex">
+Застосувати
+</string>
+
+<string name="cust_restart_title">
+Потрібний перезапуск
+</string>
+
+<string name="cust_restart_message">
+Для повного застосування нової теми необхідно перезапустити програму. Перезапустити зараз?
+</string>
+
+<string name="cust_restart_now">
+Перезапустити
+</string>
+
+<string name="cust_restart_later">
+Пізніше</string>
+
+<string name="cust_shape">Форма</string>
+<string name="cust_group_accent">Акцент</string>
+<string name="cust_group_background">Тло</string>
+<string name="cust_group_surfaces">Поверхні</string>
+<string name="cust_group_text">Текст</string>
+<string name="cust_group_status">Статус</string>
+<string name="cust_preview_sample_title">Приклад сервера</string>
+<string name="cust_preview_connected">Підключено</string>
+<string name="cust_bg_none">Немає зображення</string>
+<string name="cust_bg_applied">Зображення встановлено</string>
+<string name="cust_picker_suggested">Палітра</string>
+<string name="cust_picker_done">Готово</string>
+<string name="cust_presets">Пресети</string>
+<string name="cust_fonts">Шрифти</string>
+<string name="cust_font_family">Гарнітура</string>
+<string name="cust_font_scale">Масштаб шрифту</string>
+<string name="cust_font_preview">Приклад: демонстрація шрифту V2plus</string>
+
+<string name="title_pref_promotion">сприяння
+</string>
+
+<string name="title_pref_auto_update_subscription">
+Автоматично оновлювати передплати
+</string>
+
+<string name="summary_pref_auto_update_subscription">
+Автоматичне оновлення підписок у фоновому режимі із зазначеним інтервалом. Залежно від пристрою, ця функція може працювати не завжди.
+</string>
+
+<string name="title_pref_auto_update_interval">
+Інтервал автооновлення (хвилин не менше 15)
+</string>
+
+<string name="title_core_loglevel">
+Рівень логів
+</string>
+
+<string name="title_outbound_domain_resolve_method">
+Дозвіл доменів вихідних
+</string>
+
+<string name="title_mode">
+Режим
+</string>
+
+<string name="title_mode_help">
+Натисніть для отримання додаткової інформації
+</string>
+
+<string name="title_language">
+Мова
+</string>
+
+<string name="title_ui_settings">
+Налаштування інтерфейсу
+</string>
+
+<string name="title_pref_ui_mode_night">
+Тема інтерфейсу
+</string>
+
+<string name="title_pref_use_hev_tunnel">
+Використовувати Hev Tunnel
+</string>
+
+<string name="summary_pref_use_hev_tunnel">
+Якщо увімкнено, TUN використовуватиме hev-socks5-tunnel; інакше буде використано xray-core
+</string>
+
+<string name="title_pref_hev_tunnel_loglevel">
+Подробиці журналу HevTun
+</string>
+
+<string name="title_pref_hev_tunnel_rw_timeout">
+Таймаут Hev Tunnel (сек)
+</string>
+
+<string name="title_logcat">
+Журнал
+</string>
+
+<string name="logcat_copy">
+Копіювати
+</string>
+
+<string name="logcat_clear">
+Очистити
+</string>
+
+<string name="title_service_restart">
+Перезапустити сервіс
+</string>
+
+<string name="title_del_all_config">
+Видалити всі профілі
+</string>
+
+<string name="title_del_duplicate_config">
+Видалити дублікати профілів
+</string>
+
+<string name="title_del_invalid_config">
+Видалити неробочі профілі
+</string>
+
+<string name="title_export_all">
+Експорт усіх у буфер
+</string>
+
+<string name="title_sub_setting">
+Передплати
+</string>
+
+<string name="sub_setting_remarks">
+Назва
+</string>
+
+<string name="sub_setting_url">
+URL (необов’язково)
+</string>
+
+<string name="sub_setting_user_agent">User Agent</string>
+
+<string name="sub_setting_filter">
+Назва фільтра
+</string>
+
+<string name="sub_setting_enable">
+Оновлювати цю передплату
+</string>
+
+<string name="sub_auto_update">
+Використовувати автооновлення
+</string>
+
+<string name="sub_allow_insecure_url">
+Дозволяти незахищені HTTP-адреси
+</string>
+
+<string name="sub_setting_pre_profile">
+Попередній профіль проксі
+</string>
+
+<string name="sub_setting_next_profile">
+Наступний профіль проксі
+</string>
+
+<string name="sub_setting_pre_profile_tip">
+Профіль має бути унікальним
+</string>
+
+<string name="title_sub_update">
+Оновити передплату
+</string>
+
+<string name="title_check_availability">
+Перевірити доступність
+</string>
+
+<string name="title_ping_all_server">
+Перевірити профілі
+</string>
+
+<string name="title_real_ping_all_server">
+Перевірити затримку
+</string>
+
+<string name="title_user_asset_setting">
+Файли ресурсів
+</string>
+
+<string name="title_sort_by_test_results">
+Сортувати за затримкою</string>
+
+<string name="title_filter_config">Фільтр профілів
+</string>
+
+<string name="filter_config_all">
+Усі
+</string>
+
+<string name="title_del_duplicate_config_count">
+Видалено дублікатів профілів: %d
+</string>
+
+<string name="title_del_config_count">
+Видалено профілів: %d
+</string>
+
+<string name="title_import_config_count">
+Імпортовано профілів: %d
+</string>
+
+<string name="title_export_config_count">
+Експортовано профілів: %d
+</string>
+
+<string name="title_update_config_count">
+Оновлено профілів: %d
+</string>
+
+<string name="title_update_subscription_result">
+Оновлено профілів: %1$d (успішно: %2$d, помилок: %3$d, пропущено: %4$d)
+</string>
+
+<string name="title_update_subscription_no_subscription">
+Немає передплат
+</string>
+
+<string name="toast_server_not_found_in_group">
+Вибраний профіль не знайдено у поточній групі
+</string>
+
+<string name="toast_fragment_not_available">
+Фрагмент недоступний
+</string>
+
+<string name="title_locate_selected_config">
+Знайти вибраний профіль
+</string>
+
+<string name="tasker_start_service">
+Запуск служби
+</string>
+
+<string name="tasker_setting_confirm">
+Підтвердити
+</string>
+
+<string name="routing_settings_domain_strategy">
+Доменна стратегія
+</string>
+
+<string name="routing_settings_title">
+Маршрутизація
+</string>
+
+<string name="routing_settings_tips">
+Введіть необхідні домени/IP через кому
+</string>
+
+<string name="routing_settings_save">
+Зберегти
+</string>
+
+<string name="routing_settings_delete">
+Очистити
+</string>
+
+<string name="routing_settings_rule_title">
+Правила маршрутизації
+</string>
+
+<string name="routing_settings_add_rule">
+Додати правило
+</string>
+
+<string name="routing_settings_import_predefined_rulesets">
+Вибрати готовий набір
+</string>
+
+<string name="routing_settings_import_rulesets_tip">
+Існуючі правила будуть видалені. Продовжити?
+</string>
+
+<string name="routing_settings_import_rulesets_from_clipboard">
+Імпорт правил із буфера обміну
+</string>
+
+<string name="routing_settings_import_rulesets_from_qrcode">
+Імпорт правил з QR-коду
+</string>
+
+<string name="routing_settings_export_rulesets_to_clipboard">
+Експорт правил у буфер обміну
+</string>
+
+<string name="routing_settings_locked">
+Постійне (збережеться при імпорті правил)
+</string>
+
+<string name="routing_settings_domain">
+Домен
+</string>
+
+<string name="routing_settings_ip">IP</string>
+
+<string name="routing_settings_port">
+Порт
+</string>
+
+<string name="routing_settings_protocol">
+Протокол
+</string>
+
+<string name="routing_settings_protocol_tip">[http,tls,bittorrent]</string>
+
+<string name="routing_settings_network">
+Мережа
+</string>
+
+<string name="routing_settings_network_tip">[udp|tcp]</string>
+
+<string name="routing_settings_outbound_tag">
+Вихідне з’єднання
+</string>
+
+<string name="connection_test_pending">
+Перевірити з’єднання
+</string>
+
+<string name="connection_test_testing">
+Перевірка…
+</string>
+
+<string name="connection_test_testing_count">
+Перевірка профілів (%d)
+</string>
+
+<string name="connection_test_available">
+Успішно: з’єднання зайняло %d мс
+</string>
+
+<string name="connection_test_error">
+Збій перевірки інтернет-з’єднання: %s</string>
+
+<string name="connection_test_fail">Інтернет недоступний
+</string>
+
+<string name="server_unavailable_short">
+Сервер недоступний
+</string>
+
+<string name="connection_test_error_status_code">
+Код помилки: #%d
+</string>
+
+<string name="connection_connected">
+З’єднано, натисніть , щоб перевірити
+</string>
+
+<string name="connection_not_connected">
+Немає з’єднання
+</string>
+
+<string name="connection_runing_task_left">
+Запущено перевірок: %s
+</string>
+
+<string name="import_subscription_success">
+Передплата імпортована
+</string>
+
+<string name="import_subscription_failure">
+Неможливо імпортувати передплату
+</string>
+
+<string name="title_fragment_settings">
+Налаштування фрагментування
+</string>
+
+<string name="title_pref_fragment_packets">
+Фрагментування пакетів
+</string>
+
+<string name="title_pref_fragment_length">
+Довжина фрагмента (від - до)
+</string>
+
+<string name="title_pref_fragment_interval">
+Інтервал фрагментів (від - до)
+</string>
+
+<string name="title_pref_fragment_enabled">
+Використовувати фрагментування
+</string>
+
+<string name="update_check_for_update">
+Перевірити оновлення
+</string>
+
+<string name="update_already_latest_version">
+Встановлено останню версію
+</string>
+
+<string name="update_new_version_found">
+Знайдено нову версію: %s
+</string>
+
+<string name="update_modal_message">
+Поточна версія: %1$s
+Нова версія: %2$s
+
+Завантажити та встановити зараз?
+</string>
+
+<string name="update_now">
+Оновити
+</string>
+
+<string name="update_skip">
+Пропустити
+</string>
+
+<string name="update_downloading_title">
+Завантаження оновлення %s
+</string>
+
+<string name="update_download_progress">
+Прогрес: %d%%
+</string>
+
+<string name="update_download_size">
+Розмір: %1$s / %2$s
+</string>
+
+<string name="update_download_speed">
+Швидкість: %s/с
+</string>
+
+<string name="update_download_eta">
+Залишилось: %s
+</string>
+
+<string name="update_eta_unknown">
+розрахунок ...
+</string>
+
+<string name="update_size_unknown">
+невідомо
+</string>
+
+<string name="update_download_failed">
+Неможливо скачати оновлення
+</string>
+
+<string name="update_check_pre_release">
+Шукати попередній випуск
+</string>
+
+<string name="update_checking_for_update">
+Перевірка оновлення…
+</string>
+
+<string name="title_policy_group_type">
+Тип групи політик
+</string>
+
+<string name="title_policy_group_subscription_id">
+З групи передплати
+</string>
+
+<string name="title_policy_group_subscription_filter">
+Назва фільтра
+</string>
+
+<string name="title_configuration_backup_restore">
+Резервне копіювання
+</string>
+
+<string name="title_configuration_backup">
+Створити резервну копію
+</string>
+
+<string name="title_configuration_restore">
+Відновити з копії
+</string>
+
+<string name="title_configuration_share">
+Поділитись копією
+</string>
+
+<string name="title_webdav_config_setting">
+Налаштування WebDAV
+</string>
+
+<string name="title_webdav_config_setting_unknown">
+Необхідно налаштувати WebDAV
+</string>
+
+<string name="title_webdav_url">
+URL сервера
+</string>
+
+<string name="title_webdav_user">
+Користувач</string>
+
+<string name="title_webdav_pass">Пароль
+</string>
+
+    <string name="title_webdav_remote_path">
+    Віддалений шлях (необов\'язково)</string>
+
+    <string name="content_transfer_blue_receive_fail">Не вдалося прийняти через синій міст</string>
+    <string name="content_transfer_loc_req">Потрібна геолокація</string>
+    <string name="content_transfer_loc_req_msg">Для пошуку пристроїв Bluetooth Android вимагає увімкнути геолокацію (GPS).</string>
+    <string name="content_transfer_beacon_start_fail">Не вдалося запустити маяк</string>
+
+    <string name="content_transfer_pick_custom">Власний вибір</string>
+
+</resources>

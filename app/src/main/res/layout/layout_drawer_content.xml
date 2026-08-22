@@ -1,0 +1,601 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/md_theme_surface"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="88dp"
+        android:layout_margin="@dimen/padding_spacing_dp16"
+        android:background="@drawable/bg_nav_header"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/padding_spacing_dp16"
+        android:paddingEnd="@dimen/padding_spacing_dp16">
+
+        <FrameLayout
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:background="@drawable/bg_drawer_icon">
+
+            <ImageView
+                android:id="@+id/drawer_logo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:importantForAccessibility="no"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/ic_launcher" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/padding_spacing_dp12"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_thin"
+                android:text="@string/app_name"
+                android:textColor="@color/colorWhite"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="@string/title_based_on"
+                android:textColor="@color/colorWhite"
+                android:textSize="11sp"
+                android:alpha="0.7" />
+
+            <TextView
+                android:id="@+id/tv_subscription_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_spacing_dp8"
+                android:text=""
+                android:textColor="@color/colorWhite"
+                android:textSize="10sp"
+                android:alpha="0.9"
+                android:visibility="gone" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Scrollable Content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/padding_spacing_dp16"
+            android:paddingEnd="@dimen/padding_spacing_dp16"
+            android:paddingBottom="@dimen/padding_spacing_dp16">
+
+            <!-- Category: Useful -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:letterSpacing="0.08"
+                android:paddingStart="@dimen/padding_spacing_dp12"
+                android:paddingTop="@dimen/padding_spacing_dp4"
+                android:paddingBottom="@dimen/padding_spacing_dp8"
+                android:text="@string/drawer_category_useful"
+                android:textAllCaps="true"
+                android:textColor="@color/md_theme_onSurfaceVariant"
+                android:textSize="11sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_drawer_card"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/padding_spacing_dp4"
+                android:paddingBottom="@dimen/padding_spacing_dp4">
+
+                <!-- Get Servers -->
+                <LinearLayout
+                    android:id="@+id/drawer_get_servers"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/bg_drawer_item_ripple"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/padding_spacing_dp12"
+                    android:paddingEnd="@dimen/padding_spacing_dp12">
+
+                    <FrameLayout
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="@drawable/bg_drawer_icon">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_cloud_download_24dp"
+                            android:tint="@color/color_fab_active" />
+                    </FrameLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/padding_spacing_dp12"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@string/drawer_category_get_servers"
+                        android:textColor="@color/md_theme_onSurface"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <!-- Our Telegram -->
+                <LinearLayout
+                    android:id="@+id/drawer_our_telegram"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/bg_drawer_item_ripple"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/padding_spacing_dp12"
+                    android:paddingEnd="@dimen/padding_spacing_dp12">
+
+                    <FrameLayout
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="@drawable/bg_drawer_icon">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_telegram_24dp"
+                            android:tint="@color/color_fab_active" />
+                    </FrameLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/padding_spacing_dp12"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@string/our_telegram_channel"
+                        android:textColor="@color/md_theme_onSurface"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Category: Management -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:letterSpacing="0.08"
+                android:paddingStart="@dimen/padding_spacing_dp12"
+                android:paddingTop="@dimen/padding_spacing_dp4"
+                android:paddingBottom="@dimen/padding_spacing_dp8"
+                android:text="@string/drawer_category_management"
+                android:textAllCaps="true"
+                android:textColor="@color/md_theme_onSurfaceVariant"
+                android:textSize="11sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_drawer_card"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/padding_spacing_dp4"
+                android:paddingBottom="@dimen/padding_spacing_dp4">
+
+                <!-- Groups -->
+                <LinearLayout
+                    android:id="@+id/drawer_sub_setting"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/bg_drawer_item_ripple"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/padding_spacing_dp12"
+                    android:paddingEnd="@dimen/padding_spacing_dp12">
+
+                    <FrameLayout
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="@drawable/bg_drawer_icon">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_subscriptions_24dp"
+                            android:tint="@color/color_fab_active" />
+                    </FrameLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/padding_spacing_dp12"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@string/title_sub_setting"
+                        android:textColor="@color/md_theme_onSurface"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <!-- Per App Proxy -->
+                <LinearLayout
+                    android:id="@+id/drawer_per_app_proxy"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/bg_drawer_item_ripple"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/padding_spacing_dp12"
+                    android:paddingEnd="@dimen/padding_spacing_dp12">
+
+                    <FrameLayout
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="@drawable/bg_drawer_icon">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_per_apps_24dp"
+                            android:tint="@color/color_fab_active" />
+                    </FrameLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/padding_spacing_dp12"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@string/per_app_proxy_settings"
+                        android:textColor="@color/md_theme_onSurface"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <!-- Routing -->
+                <LinearLayout
+                    android:id="@+id/drawer_routing"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/bg_drawer_item_ripple"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/padding_spacing_dp12"
+                    android:paddingEnd="@dimen/padding_spacing_dp12">
+
+                    <FrameLayout
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="@drawable/bg_drawer_icon">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_routing_24dp"
+                            android:tint="@color/color_fab_active" />
+                    </FrameLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/padding_spacing_dp12"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@string/routing_settings_title"
+                        android:textColor="@color/md_theme_onSurface"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <!-- Bridge -->
+                <LinearLayout
+                    android:id="@+id/drawer_bridge_setting"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/bg_drawer_item_ripple"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/padding_spacing_dp12"
+                    android:paddingEnd="@dimen/padding_spacing_dp12">
+
+                    <FrameLayout
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="@drawable/bg_drawer_icon">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_routing_24dp"
+                            android:tint="@color/color_fab_active" />
+                    </FrameLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/padding_spacing_dp12"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@string/drawer_bridge"
+                        android:textColor="@color/md_theme_onSurface"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <!-- Asset Files -->
+                <LinearLayout
+                    android:id="@+id/drawer_user_asset"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/bg_drawer_item_ripple"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/padding_spacing_dp12"
+                    android:paddingEnd="@dimen/padding_spacing_dp12">
+
+                    <FrameLayout
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="@drawable/bg_drawer_icon">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_file_24dp"
+                            android:tint="@color/color_fab_active" />
+                    </FrameLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/padding_spacing_dp12"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@string/title_user_asset_setting"
+                        android:textColor="@color/md_theme_onSurface"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Category: Application -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:letterSpacing="0.08"
+                android:paddingStart="@dimen/padding_spacing_dp12"
+                android:paddingTop="@dimen/padding_spacing_dp16"
+                android:paddingBottom="@dimen/padding_spacing_dp8"
+                android:text="@string/drawer_category_app"
+                android:textAllCaps="true"
+                android:textColor="@color/md_theme_onSurfaceVariant"
+                android:textSize="11sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_drawer_card"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/padding_spacing_dp4"
+                android:paddingBottom="@dimen/padding_spacing_dp4">
+
+                <!-- Customization -->
+                <LinearLayout
+                    android:id="@+id/drawer_customization"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/bg_drawer_item_ripple"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/padding_spacing_dp12"
+                    android:paddingEnd="@dimen/padding_spacing_dp12">
+
+                    <FrameLayout
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="@drawable/bg_drawer_icon">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_palette_24dp"
+                            android:tint="@color/color_fab_active" />
+                    </FrameLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/padding_spacing_dp12"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@string/cust_title"
+                        android:textColor="@color/md_theme_onSurface"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <!-- Settings -->
+                <LinearLayout
+                    android:id="@+id/drawer_settings"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/bg_drawer_item_ripple"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/padding_spacing_dp12"
+                    android:paddingEnd="@dimen/padding_spacing_dp12">
+
+                    <FrameLayout
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="@drawable/bg_drawer_icon">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_settings_24dp"
+                            android:tint="@color/color_fab_active" />
+                    </FrameLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/padding_spacing_dp12"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@string/title_settings"
+                        android:textColor="@color/md_theme_onSurface"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <!-- Logcat -->
+                <LinearLayout
+                    android:id="@+id/drawer_logcat"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/bg_drawer_item_ripple"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/padding_spacing_dp12"
+                    android:paddingEnd="@dimen/padding_spacing_dp12">
+
+                    <FrameLayout
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="@drawable/bg_drawer_icon">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_logcat_24dp"
+                            android:tint="@color/color_fab_active" />
+                    </FrameLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/padding_spacing_dp12"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@string/title_logcat"
+                        android:textColor="@color/md_theme_onSurface"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/drawer_check_update"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/bg_drawer_item_ripple"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/padding_spacing_dp12"
+                    android:paddingEnd="@dimen/padding_spacing_dp12">
+
+                    <FrameLayout
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="@drawable/bg_drawer_icon">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_check_update_24dp"
+                            android:tint="@color/color_fab_active" />
+                    </FrameLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/padding_spacing_dp12"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@string/update_check_for_update"
+                        android:textColor="@color/md_theme_onSurface"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/drawer_content_transfer"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/bg_drawer_item_ripple"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/padding_spacing_dp12"
+                    android:paddingEnd="@dimen/padding_spacing_dp12">
+
+                    <FrameLayout
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="@drawable/bg_drawer_icon">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_share_24dp"
+                            android:tint="@color/color_fab_active" />
+                    </FrameLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/padding_spacing_dp12"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@string/content_transfer_title"
+                        android:textColor="@color/md_theme_onSurface"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Version Footer -->
+    <TextView
+        android:id="@+id/tv_drawer_version"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingTop="@dimen/padding_spacing_dp12"
+        android:paddingBottom="@dimen/padding_spacing_dp16"
+        android:textColor="@color/md_theme_onSurfaceVariant"
+        android:textSize="12sp" />
+
+</LinearLayout>
