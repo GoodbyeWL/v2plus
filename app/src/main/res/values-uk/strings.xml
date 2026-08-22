@@ -1379,10 +1379,6 @@ URL (необов’язково)
 Неможливо скачати оновлення
 </string>
 
-<string name="update_check_pre_release">
-Шукати попередній випуск
-</string>
-
 <string name="update_checking_for_update">
 Перевірка оновлення…
 </string>

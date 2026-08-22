@@ -1,11 +1,14 @@
 package com.v2plus.app.handler
 
 import android.content.Context
+import android.os.Build
 import android.util.Log
 import com.v2plus.app.AppConfig
 import com.v2plus.app.BuildConfig
 import com.v2plus.app.dto.CheckUpdateResult
+import com.v2plus.app.dto.GitHubRelease
 import com.v2plus.app.util.HttpUtil
+import com.v2plus.app.util.JsonUtil
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ensureActive
@@ -25,59 +28,83 @@ object UpdateCheckerManager {
         val etaSeconds: Long
     )
 
-    suspend fun checkForUpdate(includePreRelease: Boolean = false): CheckUpdateResult = withContext(Dispatchers.IO) {
-        if (includePreRelease) {
-        }
+    suspend fun checkForUpdate(): CheckUpdateResult = withContext(Dispatchers.IO) {
         val timeoutMs = 15000
         val httpPort = SettingsManager.getHttpPort()
-        val versionUrls = listOf(AppConfig.APP_VERSION_URL, AppConfig.APP_VERSION_URL_FALLBACK)
-        var response: String? = null
-        for (url in versionUrls) {
-            response = HttpUtil.getUrlContent(url, timeoutMs)
-            if (!response.isNullOrEmpty()) {
-                Log.i(AppConfig.TAG, "Update check: descriptor from $url")
-                break
-            }
-            response = HttpUtil.getUrlContent(url, timeoutMs, httpPort)
-            if (!response.isNullOrEmpty()) {
-                Log.i(AppConfig.TAG, "Update check: descriptor from $url (via local HTTP proxy)")
-                break
-            }
-        }
-        if (response.isNullOrEmpty()) {
-            throw IllegalStateException(
-                "Failed to get response (check network, DNS, firewall, or try disabling routing through the app for this host)"
+        val json = fetchGithubLatestReleaseJson(timeoutMs, 0)
+            ?: fetchGithubLatestReleaseJson(timeoutMs, httpPort)
+            ?: throw IllegalStateException(
+                "GitHub Releases unavailable (network, DNS, or github.com blocked)"
             )
-        }
 
-        val parts = response.trim().split(";", limit = 2)
-        if (parts.size < 2) {
-            throw IllegalStateException("Invalid update descriptor format")
+        val release = JsonUtil.fromJson(json, GitHubRelease::class.java)
+            ?: throw IllegalStateException("Invalid GitHub release JSON")
+        val latestVersion = release.tagName.trim().removePrefix("v")
+        if (latestVersion.isEmpty()) {
+            throw IllegalStateException("Latest GitHub release has no tag")
         }
-
-        val latestVersion = parts[0].trim().removePrefix("v")
-        val rawUrl = parts[1].trim()
-        val downloadUrl = rawUrl.trim('`', '"', '\'')
-        if (!(downloadUrl.startsWith("https://") || downloadUrl.startsWith("http://"))) {
-            throw IllegalStateException("Invalid update URL")
-        }
+        val downloadUrl = pickApkUrl(release)
+            ?: throw IllegalStateException("Latest GitHub release has no APK asset")
 
         Log.i(
             AppConfig.TAG,
-            "Found new version: $latestVersion (current: ${BuildConfig.VERSION_NAME})"
+            "GitHub latest: $latestVersion (current: ${BuildConfig.VERSION_NAME})"
         )
 
         return@withContext if (compareVersions(latestVersion, BuildConfig.VERSION_NAME) > 0) {
             CheckUpdateResult(
                 hasUpdate = true,
                 latestVersion = latestVersion,
-                releaseNotes = null,
+                releaseNotes = release.body,
                 downloadUrl = downloadUrl,
-                isPreRelease = false
+                isPreRelease = release.prerelease
             )
         } else {
             CheckUpdateResult(hasUpdate = false)
         }
+    }
+
+    private fun fetchGithubLatestReleaseJson(timeoutMs: Int, httpPort: Int): String? {
+        val conn = HttpUtil.createProxyConnection(
+            AppConfig.GITHUB_LATEST_RELEASE_API,
+            httpPort,
+            timeoutMs,
+            timeoutMs
+        ) ?: return null
+        try {
+            conn.setRequestProperty("User-Agent", "v2plus/${BuildConfig.VERSION_NAME}")
+            conn.setRequestProperty("Accept", "application/vnd.github+json")
+            conn.connect()
+            val code = conn.responseCode
+            if (code !in 200..299) {
+                Log.w(AppConfig.TAG, "GitHub release API HTTP $code (port=$httpPort)")
+                return null
+            }
+            return conn.inputStream.bufferedReader().readText()
+        } catch (e: Exception) {
+            Log.e(AppConfig.TAG, "GitHub release API failed (port=$httpPort): ${e.message}")
+            return null
+        } finally {
+            try {
+                conn.disconnect()
+            } catch (_: Exception) {
+            }
+        }
+    }
+
+    private fun pickApkUrl(release: GitHubRelease): String? {
+        val apks = release.assets.filter { it.name.endsWith(".apk", ignoreCase = true) }
+        if (apks.isEmpty()) return null
+        apks.firstOrNull { it.name.contains("universal", ignoreCase = true) }?.let {
+            return it.browserDownloadUrl
+        }
+        val abi = Build.SUPPORTED_ABIS.firstOrNull()
+        if (!abi.isNullOrBlank()) {
+            apks.firstOrNull { it.name.contains(abi, ignoreCase = true) }?.let {
+                return it.browserDownloadUrl
+            }
+        }
+        return apks.first().browserDownloadUrl
     }
 
     suspend fun downloadApk(

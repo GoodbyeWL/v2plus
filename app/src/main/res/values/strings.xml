@@ -466,11 +466,10 @@
     <string name="title_pref_fragment_interval">Fragment Interval (min-max)</string>
     <string name="title_pref_fragment_enabled">Enable Fragment</string>
 
-    <string name="update_check_for_update">Updates in Telegram</string>
+    <string name="update_check_for_update">Check for updates</string>
     <string name="update_already_latest_version">Already on the latest version</string>
     <string name="update_new_version_found">New version found: %s</string>
     <string name="update_now">Update now</string>
-    <string name="update_check_pre_release">Check Pre-release</string>
     <string name="update_checking_for_update">Checking for update…</string>
 
     <string name="title_policy_group_type">Policy group type</string>

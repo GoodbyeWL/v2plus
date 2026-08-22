@@ -74,7 +74,6 @@ object AppConfig {
     const val PREF_OUTBOUND_DOMAIN_RESOLVE_METHOD = "pref_outbound_domain_resolve_method"
     const val PREF_MODE = "pref_mode"
     const val PREF_IS_BOOTED = "pref_is_booted"
-    const val PREF_CHECK_UPDATE_PRE_RELEASE = "pref_check_update_pre_release"
     const val PREF_GEO_FILES_SOURCES = "pref_geo_files_sources"
     const val PREF_USE_HEV_TUNNEL = "pref_use_hev_tunnel_v2"
     const val PREF_HEV_TUNNEL_LOGLEVEL = "pref_hev_tunnel_loglevel"
@@ -140,12 +139,10 @@ object AppConfig {
     /** GitHub release asset base; %s = "owner/repo" (e.g. Loyalsoldier/v2ray-rules-dat). Not the Telegram SUPPORT_URL. */
     const val GITHUB_DOWNLOAD_URL = "https://github.com/%s/releases/latest/download"
     const val ANDROID_PACKAGE_NAME_LIST_URL = ""
-    const val UPSTREAM_REPO_SLUG = "v2plus"
+    const val GITHUB_REPO = "GoodbyeWL/v2plus"
+    const val GITHUB_LATEST_RELEASE_API = "https://api.github.com/repos/GoodbyeWL/v2plus/releases/latest"
     const val APP_URL = SUPPORT_URL
     const val APP_API_URL = ""
-    const val APP_VERSION_URL = "https://fhosting.icu/appver"
-    /** Secondary update descriptor; used if [APP_VERSION_URL] fails (network/DNS). */
-    const val APP_VERSION_URL_FALLBACK = "https://v2plus.hb.ru-msk.vkcloud-storage.ru/appver"
     const val APP_ISSUES_URL = SUPPORT_URL
     const val APP_WIKI_MODE = SUPPORT_URL
     const val APP_PRIVACY_POLICY = SUPPORT_URL

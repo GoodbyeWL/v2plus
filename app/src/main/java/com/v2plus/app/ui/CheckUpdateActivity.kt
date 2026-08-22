@@ -61,7 +61,7 @@ class CheckUpdateActivity : BaseActivity() {
 
         lifecycleScope.launch {
             try {
-                val result = UpdateCheckerManager.checkForUpdate(false)
+                val result = UpdateCheckerManager.checkForUpdate()
                 if (result.hasUpdate) {
                     showUpdateDialog(result)
                 } else {
