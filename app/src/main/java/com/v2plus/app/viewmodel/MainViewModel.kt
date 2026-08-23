@@ -57,10 +57,22 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     private var lastUpdateListTime = 0L
 
     fun startListenBroadcast() {
-        isRunning.value = false
         val mFilter = IntentFilter(AppConfig.BROADCAST_ACTION_ACTIVITY)
         ContextCompat.registerReceiver(getApplication(), mMsgReceiver, mFilter, Utils.receiverFlags())
+        queryRunningState()
+    }
+
+    /**
+     * Ask the daemon process for the real VPN state. If nobody answers (service is dead),
+     * the UI stays disconnected — same as v2rayNG [startListenBroadcast].
+     */
+    fun queryRunningState() {
+        isRunning.value = false
         MessageUtil.sendMsg2Service(getApplication(), AppConfig.MSG_REGISTER_CLIENT, "")
+    }
+
+    fun markDisconnected() {
+        isRunning.value = false
     }
 
     /**

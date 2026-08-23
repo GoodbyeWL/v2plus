@@ -259,6 +259,7 @@ class MainActivity : HelperBaseActivity() {
         applyRunningState(isLoading = true, isRunning = false)
 
         if (mainViewModel.isRunning.value == true) {
+            mainViewModel.markDisconnected()
             V2RayServiceManager.stopVService(this)
         } else if (SettingsManager.isVpnMode()) {
             val intent = VpnService.prepare(this)
@@ -330,6 +331,7 @@ class MainActivity : HelperBaseActivity() {
 
     override fun onResume() {
         super.onResume()
+        mainViewModel.queryRunningState()
         checkPendingUpdate()
     }
 

@@ -9,6 +9,7 @@ import android.os.Build
 import android.os.ParcelFileDescriptor
 import android.util.Log
 import androidx.core.content.ContextCompat
+import com.v2plus.app.AngApplication
 import com.v2plus.app.AppConfig
 import com.v2plus.app.R
 import com.v2plus.app.contracts.ServiceControl
@@ -67,7 +68,7 @@ object V2RayServiceManager {
             AutoReconnectManager.onUserStop()
         }
         try {
-            MessageUtil.sendMsg2Service(context, AppConfig.MSG_STATE_STOP, "")
+            MessageUtil.sendMsg2Service(context, AppConfig.MSG_STATE_STOP, "", isUserAction)
         } catch (e: Exception) {
             Log.e(AppConfig.TAG, "stopVService", e)
         }
@@ -257,8 +258,8 @@ object V2RayServiceManager {
      */
     fun stopCoreLoop(): Boolean {
         val sessionAtStop = coreSession
-        val service = getService() ?: return false
-        
+        val service = getService()
+
         // Only attempt to stop if core is actually running
         if (coreController.isRunning) {
             try {
@@ -301,22 +302,29 @@ object V2RayServiceManager {
             return false
         }
 
-        // Always send stop success message to UI
-        MessageUtil.sendMsg2UI(service, AppConfig.MSG_STATE_STOP_SUCCESS, "")
-        
+        val uiContext = service ?: try {
+            AngApplication.application
+        } catch (_: Exception) {
+            null
+        }
+        if (uiContext != null) {
+            MessageUtil.sendMsg2UI(uiContext, AppConfig.MSG_STATE_STOP_SUCCESS, "")
+        }
+
         // Cancel notifications
         NotificationManager.cancelNotification()
 
         clearLocalProxySessionMmkv()
 
-        // Unregister broadcast receivers
-        try {
-            service.unregisterReceiver(mMsgReceive)
-        } catch (e: IllegalArgumentException) {
-            // Receiver was not registered, which is fine
-            Log.d(AppConfig.TAG, "StartCore-Manager: Receiver not registered, skipping unregister")
-        } catch (e: Exception) {
-            Log.e(AppConfig.TAG, "StartCore-Manager: Failed to unregister receiver", e)
+        if (service != null) {
+            try {
+                service.unregisterReceiver(mMsgReceive)
+            } catch (e: IllegalArgumentException) {
+                // Receiver was not registered, which is fine
+                Log.d(AppConfig.TAG, "StartCore-Manager: Receiver not registered, skipping unregister")
+            } catch (e: Exception) {
+                Log.e(AppConfig.TAG, "StartCore-Manager: Failed to unregister receiver", e)
+            }
         }
 
         return true
@@ -508,6 +516,13 @@ object V2RayServiceManager {
 
                 AppConfig.MSG_STATE_STOP -> {
                     Log.i(AppConfig.TAG, "StartCore-Manager: Stop service")
+                    // Flags must be set in this process (:RunSoLibV2RayDaemon).
+                    // UI-process AutoReconnectManager is a different singleton.
+                    val userStop = intent?.getBooleanExtra(MessageUtil.EXTRA_USER_ACTION, true) ?: true
+                    AutoReconnectManager.markExpectedShutdown()
+                    if (userStop) {
+                        AutoReconnectManager.onUserStop()
+                    }
                     serviceControl.stopService()
                 }
 

@@ -21,6 +21,7 @@ import com.v2plus.app.AppConfig.LOOPBACK
 import com.v2plus.app.BuildConfig
 import com.v2plus.app.contracts.ServiceControl
 import com.v2plus.app.contracts.Tun2SocksControl
+import com.v2plus.app.handler.AutoReconnectManager
 import com.v2plus.app.handler.MmkvManager
 import com.v2plus.app.handler.NotificationManager
 import com.v2plus.app.handler.SettingsManager
@@ -83,6 +84,8 @@ class V2RayVpnService : VpnService(), ServiceControl {
 
     override fun onRevoke() {
         Log.w(AppConfig.TAG, "StartCore-VPN: Permission revoked")
+        // Another VPN client took the tunnel. Same as v2rayNG: tear down and stay down.
+        AutoReconnectManager.onUserStop()
         stopAllService()
     }
 
@@ -94,16 +97,33 @@ class V2RayVpnService : VpnService(), ServiceControl {
     override fun onDestroy() {
         super.onDestroy()
         Log.i(AppConfig.TAG, "StartCore-VPN: Service destroyed")
+        if (V2RayServiceManager.isCurrentCoreSession(coreSession)) {
+            V2RayServiceManager.stopCoreLoop()
+        }
+        if (V2RayServiceManager.serviceControl?.get() === this) {
+            V2RayServiceManager.serviceControl = null
+        }
         NotificationManager.cancelNotification()
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         Log.i(AppConfig.TAG, "StartCore-VPN: Service command received")
-        NotificationManager.startForegroundImmediate(this)
-        setupVpnService()
-        startService()
-        return START_STICKY
-        //return super.onStartCommand(intent, flags, startId)
+        return try {
+            NotificationManager.startForegroundImmediate(this)
+            if (!setupVpnService()) {
+                // v2rayNG: do not return START_STICKY after a failed setup — Android
+                // would restart the service in a loop (e.g. another VPN owns the TUN).
+                stopSelf()
+                START_NOT_STICKY
+            } else {
+                startService()
+                START_STICKY
+            }
+        } catch (e: Exception) {
+            Log.e(AppConfig.TAG, "StartCore-VPN: onStartCommand failed", e)
+            stopSelf()
+            START_NOT_STICKY
+        }
     }
 
     override fun getService(): Service {
@@ -143,21 +163,20 @@ class V2RayVpnService : VpnService(), ServiceControl {
      * Sets up the VPN service.
      * Prepares the VPN and configures it if preparation is successful.
      */
-    private fun setupVpnService() {
+    private fun setupVpnService(): Boolean {
         val prepare = prepare(this)
         if (prepare != null) {
             Log.e(AppConfig.TAG, "StartCore-VPN: Permission not granted")
-            stopSelf()
-            return
+            return false
         }
 
         if (configureVpnService() != true) {
             Log.e(AppConfig.TAG, "StartCore-VPN: Configuration failed")
-            stopSelf()
-            return
+            return false
         }
 
         runTun2socks()
+        return true
     }
 
     /**
@@ -201,9 +220,8 @@ class V2RayVpnService : VpnService(), ServiceControl {
             return true
         } catch (e: Exception) {
             Log.e(AppConfig.TAG, "Failed to establish VPN interface", e)
-            stopAllService()
+            return false
         }
-        return false
     }
 
     /**
@@ -298,46 +316,47 @@ class V2RayVpnService : VpnService(), ServiceControl {
         }
 
         if (MmkvManager.decodeSettingsBool(AppConfig.PREF_PER_APP_PROXY) == false) {
-            builder.addDisallowedApplication(selfPackageName)
-            vpnHiddenApps.forEach { pkg ->
-                try { builder.addDisallowedApplication(pkg) } catch (_: PackageManager.NameNotFoundException) {}
-            }
+            disallowApps(builder, setOf(selfPackageName) + vpnHiddenApps)
             return
         }
 
         val apps = MmkvManager.decodeSettingsStringSet(AppConfig.PREF_PER_APP_PROXY_SET)
         if (apps.isNullOrEmpty()) {
-            builder.addDisallowedApplication(selfPackageName)
-            vpnHiddenApps.forEach { pkg ->
-                try { builder.addDisallowedApplication(pkg) } catch (_: PackageManager.NameNotFoundException) {}
-            }
+            disallowApps(builder, setOf(selfPackageName) + vpnHiddenApps)
             return
         }
 
         val bypassApps = MmkvManager.decodeSettingsBool(AppConfig.PREF_BYPASS_APPS)
-        if (bypassApps) apps.add(selfPackageName) else apps.remove(selfPackageName)
-
         if (bypassApps) {
+            apps.add(selfPackageName)
             apps.addAll(vpnHiddenApps)
+            disallowApps(builder, apps)
+            return
         }
 
-        apps.forEach {
+        // Allow-list mode: Builder forbids mixing addAllowedApplication with
+        // addDisallowedApplication. Hidden apps stay off the VPN by omission.
+        apps.remove(selfPackageName)
+        apps.removeAll(vpnHiddenApps)
+        allowApps(builder, apps)
+    }
+
+    private fun allowApps(builder: Builder, packages: Set<String>) {
+        packages.forEach { pkg ->
             try {
-                if (bypassApps) {
-                    builder.addDisallowedApplication(it)
-                } else {
-                    builder.addAllowedApplication(it)
-                }
-            } catch (e: PackageManager.NameNotFoundException) {
-                Log.e(AppConfig.TAG, "StartCore-VPN: Failed to configure app", e)
+                builder.addAllowedApplication(pkg)
+            } catch (e: Exception) {
+                Log.w(AppConfig.TAG, "StartCore-VPN: skip allow $pkg", e)
             }
         }
+    }
 
-        if (!bypassApps) {
-            vpnHiddenApps.forEach { pkg ->
-                if (!apps.contains(pkg)) {
-                    try { builder.addDisallowedApplication(pkg) } catch (_: PackageManager.NameNotFoundException) {}
-                }
+    private fun disallowApps(builder: Builder, packages: Set<String>) {
+        packages.forEach { pkg ->
+            try {
+                builder.addDisallowedApplication(pkg)
+            } catch (e: Exception) {
+                Log.w(AppConfig.TAG, "StartCore-VPN: skip disallow $pkg", e)
             }
         }
     }

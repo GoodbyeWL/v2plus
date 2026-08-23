@@ -11,6 +11,7 @@ import java.io.Serializable
 
 object MessageUtil {
 
+    const val EXTRA_USER_ACTION = "userAction"
 
     /**
      * Sends a message to the service.
@@ -19,8 +20,8 @@ object MessageUtil {
      * @param what The message identifier.
      * @param content The message content.
      */
-    fun sendMsg2Service(ctx: Context, what: Int, content: Serializable) {
-        sendMsg(ctx, AppConfig.BROADCAST_ACTION_SERVICE, what, content)
+    fun sendMsg2Service(ctx: Context, what: Int, content: Serializable, userAction: Boolean? = null) {
+        sendMsg(ctx, AppConfig.BROADCAST_ACTION_SERVICE, what, content, userAction)
     }
 
     /**
@@ -59,13 +60,22 @@ object MessageUtil {
      * @param what The message identifier.
      * @param content The message content.
      */
-    private fun sendMsg(ctx: Context, action: String, what: Int, content: Serializable) {
+    private fun sendMsg(
+        ctx: Context,
+        action: String,
+        what: Int,
+        content: Serializable,
+        userAction: Boolean? = null,
+    ) {
         try {
             val intent = Intent()
             intent.action = action
             intent.`package` = AppConfig.ANG_PACKAGE
             intent.putExtra("key", what)
             intent.putExtra("content", content)
+            if (userAction != null) {
+                intent.putExtra(EXTRA_USER_ACTION, userAction)
+            }
             ctx.sendBroadcast(intent)
         } catch (e: Exception) {
             Log.e(AppConfig.TAG, "Failed to send message with action: $action", e)
