@@ -21,8 +21,8 @@ android {
         applicationId = "com.v2plus.app"
         minSdk = 24
         targetSdk = 36
-        versionCode = 729
-        versionName = "1.2.9"
+        versionCode = 730
+        versionName = "1.3.0"
         multiDexEnabled = true
         resourceConfigurations.addAll(listOf("en", "ru", "be", "uk"))
 
