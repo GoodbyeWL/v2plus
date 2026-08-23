@@ -1,0 +1,80 @@
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: "GitHub release tag (e.g. 1.2.9). Empty = build artifacts only."
+        required: false
+        type: string
+      notes:
+        description: "Release notes (markdown)"
+        required: false
+        type: string
+      prerelease:
+        description: "Mark as pre-release"
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+          cache: gradle
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+        with:
+          packages: "platforms;android-36 build-tools;36.0.0 platform-tools"
+          log-accepted-android-sdk-licenses: false
+
+      - name: Download libv2ray.aar
+        run: |
+          mkdir -p app/libs
+          curl -fsSL -L -o app/libs/libv2ray.aar \
+            "https://github.com/2dust/AndroidLibXrayLite/releases/download/v26.8.20/libv2ray.aar"
+
+      - name: Decode keystore
+        uses: timheuer/base64-to-file@v1.2
+        id: android_keystore
+        with:
+          fileName: android_keystore.jks
+          encodedString: ${{ secrets.APP_KEYSTORE_BASE64 }}
+
+      - name: Build playstore release
+        run: |
+          chmod +x gradlew
+          ./gradlew assemblePlaystoreRelease --stacktrace \
+            -Pandroid.injected.signing.store.file=${{ steps.android_keystore.outputs.filePath }} \
+            -Pandroid.injected.signing.store.password=${{ secrets.APP_KEYSTORE_PASSWORD }} \
+            -Pandroid.injected.signing.key.alias=${{ secrets.APP_KEYSTORE_ALIAS }} \
+            -Pandroid.injected.signing.key.password=${{ secrets.APP_KEY_PASSWORD }}
+
+      - name: Upload APKs
+        uses: actions/upload-artifact@v4
+        with:
+          name: playstore-release
+          path: app/build/outputs/apk/playstore/release/*.apk
+
+      - name: Create GitHub Release
+        if: ${{ inputs.release_tag != '' }}
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ inputs.release_tag }}
+          name: ${{ inputs.release_tag }}
+          prerelease: ${{ inputs.prerelease }}
+          body: ${{ inputs.notes }}
+          files: app/build/outputs/apk/playstore/release/*.apk
+          fail_on_unmatched_files: true
