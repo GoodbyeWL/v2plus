@@ -38,13 +38,22 @@ object AutoReconnectManager {
     private var retryCount = 0
     private var lastKnownGuid: String? = null
     @Volatile private var failoverInProgress = false
+    @Volatile private var expectedShutdown = false
+    private var generation = 0
 
     fun isEnabled(): Boolean =
         MmkvManager.decodeSettingsBool(AppConfig.PREF_AUTO_RECONNECT, true)
 
+    fun markExpectedShutdown() {
+        expectedShutdown = true
+    }
+
+    fun isExpectedShutdown(): Boolean = expectedShutdown
+
     // ── lifecycle hooks ──────────────────────────────────────────────
 
     fun onServiceStarted(ctx: Context) {
+        expectedShutdown = false
         if (!isEnabled()) return
         context = ctx.applicationContext
         active = true
@@ -58,10 +67,12 @@ object AutoReconnectManager {
     }
 
     fun onUserStop() {
+        generation++
         userStopped = true
         active = false
         failoverInProgress = false
-        stopHealthCheck()
+        expectedShutdown = true
+        handler.removeCallbacksAndMessages(null)
     }
 
     /**
@@ -72,16 +83,21 @@ object AutoReconnectManager {
         if (!isEnabled()) return
         stopHealthCheck()
         Log.w(AppConfig.TAG, "AutoReconnect: core stopped unexpectedly")
-        handler.postDelayed({ doReconnectOrFailover() }, RETRY_DELAY_MS)
+        val gen = generation
+        handler.postDelayed({
+            if (userStopped || gen != generation) return@postDelayed
+            doReconnectOrFailover()
+        }, RETRY_DELAY_MS)
     }
 
     fun reset() {
+        generation++
         active = false
         userStopped = false
         failoverInProgress = false
         consecutiveFails = 0
         retryCount = 0
-        stopHealthCheck()
+        handler.removeCallbacksAndMessages(null)
         context = null
     }
 
@@ -138,6 +154,7 @@ object AutoReconnectManager {
         val ctx = context ?: return
         if (userStopped || !active) return
         if (failoverInProgress) return
+        val gen = generation
 
         if (retryCount < MAX_RETRIES) {
             retryCount++
@@ -146,11 +163,11 @@ object AutoReconnectManager {
             V2RayServiceManager.stopVService(ctx, isUserAction = false)
 
             handler.postDelayed({
-                if (userStopped) return@postDelayed
+                if (userStopped || gen != generation) return@postDelayed
                 V2RayServiceManager.startVService(ctx)
 
                 handler.postDelayed({
-                    if (userStopped) return@postDelayed
+                    if (userStopped || gen != generation) return@postDelayed
                     if (V2RayServiceManager.isRunning()) {
                         // Verify it actually works
                         CoroutineScope(Dispatchers.IO).launch {
@@ -162,11 +179,14 @@ object AutoReconnectManager {
                                 withContext(Dispatchers.Main) { startHealthCheck() }
                             } else {
                                 Log.w(AppConfig.TAG, "AutoReconnect: retry started but probe failed")
-                                withContext(Dispatchers.Main) { doReconnectOrFailover() }
+                                withContext(Dispatchers.Main) {
+                                    if (userStopped || gen != generation) return@withContext
+                                    doReconnectOrFailover()
+                                }
                             }
                         }
                     } else {
-                        doReconnectOrFailover()
+                        if (gen == generation) doReconnectOrFailover()
                     }
                 }, FAILOVER_WAIT_MS)
             }, RETRY_DELAY_MS)
@@ -179,8 +199,10 @@ object AutoReconnectManager {
 
     private fun tryFailover() {
         val ctx = context ?: return
+        val gen = generation
 
         CoroutineScope(Dispatchers.IO).launch {
+            if (userStopped || gen != generation) return@launch
             val originalGuid = lastKnownGuid ?: return@launch
             val originalConfig = MmkvManager.decodeServerConfig(originalGuid)
             val subId = originalConfig?.subscriptionId ?: ""
@@ -221,7 +243,7 @@ object AutoReconnectManager {
             Thread.sleep(RETRY_DELAY_MS)
 
             for (guid in candidates) {
-                if (userStopped) return@launch
+                if (userStopped || gen != generation) return@launch
 
                 val config = MmkvManager.decodeServerConfig(guid) ?: continue
                 Log.i(AppConfig.TAG, "AutoReconnect: failover trying '${config.remarks}'")

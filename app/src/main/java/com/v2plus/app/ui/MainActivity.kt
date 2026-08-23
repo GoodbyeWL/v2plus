@@ -294,7 +294,11 @@ class MainActivity : HelperBaseActivity() {
             V2RayServiceManager.stopVService(this)
         }
         lifecycleScope.launch {
-            delay(500)
+            val deadline = System.currentTimeMillis() + 4000L
+            while (V2RayServiceManager.isRunning() && System.currentTimeMillis() < deadline) {
+                delay(50)
+            }
+            delay(200)
             startV2Ray()
         }
     }

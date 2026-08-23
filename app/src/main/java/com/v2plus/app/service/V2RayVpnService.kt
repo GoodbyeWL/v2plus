@@ -34,6 +34,7 @@ class V2RayVpnService : VpnService(), ServiceControl {
     private lateinit var mInterface: ParcelFileDescriptor
     private var isRunning = false
     private var tun2SocksService: Tun2SocksControl? = null
+    private var coreSession: Long = 0
 
     /**destroy
      * Unfortunately registerDefaultNetworkCallback is going to return our VPN interface: https://android.googlesource.com/platform/frameworks/base/+/dda156ab0c5d66ad82bdcf76cda07cbc0a9c8a2e
@@ -116,9 +117,11 @@ class V2RayVpnService : VpnService(), ServiceControl {
         }
         if (!V2RayServiceManager.startCoreLoop(mInterface)) {
             Log.e(AppConfig.TAG, "StartCore-VPN: Failed to start core loop")
+            coreSession = V2RayServiceManager.currentCoreSession()
             stopAllService()
             return
         }
+        coreSession = V2RayServiceManager.currentCoreSession()
     }
 
     override fun stopService() {
@@ -359,6 +362,7 @@ class V2RayVpnService : VpnService(), ServiceControl {
     }
 
     private fun stopAllService(isForced: Boolean = true) {
+        val session = coreSession
         isRunning = false
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
             try {
@@ -371,9 +375,17 @@ class V2RayVpnService : VpnService(), ServiceControl {
         tun2SocksService?.stopTun2Socks()
         tun2SocksService = null
 
-        V2RayServiceManager.stopCoreLoop()
+        if (V2RayServiceManager.isCurrentCoreSession(session)) {
+            V2RayServiceManager.stopCoreLoop()
+        } else {
+            Log.w(AppConfig.TAG, "StartCore-VPN: skip stopCoreLoop, newer session is active")
+        }
 
         if (isForced) {
+            if (!V2RayServiceManager.isCurrentCoreSession(session)) {
+                Log.w(AppConfig.TAG, "StartCore-VPN: skip stopSelf, newer session is active")
+                return
+            }
             //stopSelf has to be called ahead of mInterface.close(). otherwise v2ray core cannot be stooped
             //It's strage but true.
             //This can be verified by putting stopself() behind and call stopLoop and startLoop

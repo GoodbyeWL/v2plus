@@ -33,8 +33,21 @@ object V2RayServiceManager {
 
     private val coreController: CoreController = V2RayNativeManager.newCoreController(CoreCallback())
 
+    @Volatile
+    private var coreSession: Long = 0
+
     /** Whether the V2Ray core loop is currently running. */
     fun isRunning(): Boolean = coreController.isRunning
+
+    fun currentCoreSession(): Long = coreSession
+
+    fun isCurrentCoreSession(session: Long): Boolean = coreSession == session
+
+    private fun beginCoreSession(): Long {
+        val next = coreSession + 1
+        coreSession = next
+        return next
+    }
 
     /**
      * Stops the VPN or proxy-only foreground service.
@@ -49,6 +62,7 @@ object V2RayServiceManager {
      */
     @JvmOverloads
     fun stopVService(context: Context, isUserAction: Boolean = true) {
+        AutoReconnectManager.markExpectedShutdown()
         if (isUserAction) {
             AutoReconnectManager.onUserStop()
         }
@@ -125,10 +139,22 @@ object V2RayServiceManager {
      * Starts the V2Ray core service.
      */
     fun startCoreLoop(vpnInterface: ParcelFileDescriptor?): Boolean {
-        // Prevent starting if already running
         if (coreController.isRunning) {
-            Log.w(AppConfig.TAG, "StartCore-Manager: Core already running")
-            return true // Return true if already running to avoid errors
+            Log.w(AppConfig.TAG, "StartCore-Manager: Previous core still running, stopping it first")
+            AutoReconnectManager.markExpectedShutdown()
+            try {
+                coreController.stopLoop()
+                val deadline = System.currentTimeMillis() + 4000L
+                while (coreController.isRunning && System.currentTimeMillis() < deadline) {
+                    Thread.sleep(50)
+                }
+            } catch (e: Exception) {
+                Log.e(AppConfig.TAG, "StartCore-Manager: Failed to stop previous core", e)
+            }
+            if (coreController.isRunning) {
+                Log.e(AppConfig.TAG, "StartCore-Manager: Previous core did not stop")
+                return false
+            }
         }
 
         val service = getService()
@@ -179,6 +205,7 @@ object V2RayServiceManager {
 
         try {
             NotificationManager.showNotification(currentConfig)
+            beginCoreSession()
             coreController.startLoop(result.content, tunFd)
         } catch (e: Exception) {
             Log.e(AppConfig.TAG, "StartCore-Manager: Failed to start core loop", e)
@@ -229,6 +256,7 @@ object V2RayServiceManager {
      * @return True if the core was stopped successfully, false otherwise.
      */
     fun stopCoreLoop(): Boolean {
+        val sessionAtStop = coreSession
         val service = getService() ?: return false
         
         // Only attempt to stop if core is actually running
@@ -244,6 +272,10 @@ object V2RayServiceManager {
                 var isRunning = coreController.isRunning
                 
                 while (isRunning && (System.currentTimeMillis() - startTime) < timeoutMs) {
+                    if (coreSession != sessionAtStop) {
+                        Log.w(AppConfig.TAG, "StartCore-Manager: stopCoreLoop aborted, newer session started")
+                        return false
+                    }
                     Thread.sleep(sleepDuration)
                     isRunning = coreController.isRunning
                     
@@ -262,6 +294,11 @@ object V2RayServiceManager {
             }
         } else {
             Log.d(AppConfig.TAG, "StartCore-Manager: Core already stopped, skipping stop operation")
+        }
+
+        if (coreSession != sessionAtStop) {
+            Log.w(AppConfig.TAG, "StartCore-Manager: skip stop cleanup, newer session is active")
+            return false
         }
 
         // Always send stop success message to UI
@@ -407,6 +444,16 @@ object V2RayServiceManager {
          * @return 0 for success, any other value for failure.
          */
         override fun shutdown(): Long {
+            // Late callback from a previous stopLoop after the new core is already up.
+            if (coreController.isRunning) {
+                Log.w(AppConfig.TAG, "StartCore-Manager: ignoring stale core shutdown")
+                return 0
+            }
+            // User/reconnect stop: VPN service is already tearing down. Do not call
+            // stopService() again — serviceControl now points at the new instance.
+            if (AutoReconnectManager.isExpectedShutdown()) {
+                return 0
+            }
             val serviceControl = serviceControl?.get() ?: return -1
             return try {
                 serviceControl.stopService()
@@ -466,8 +513,13 @@ object V2RayServiceManager {
 
                 AppConfig.MSG_STATE_RESTART -> {
                     Log.i(AppConfig.TAG, "StartCore-Manager: Restart service")
+                    AutoReconnectManager.markExpectedShutdown()
                     serviceControl.stopService()
-                    Thread.sleep(500L)
+                    val deadline = System.currentTimeMillis() + 4000L
+                    while (coreController.isRunning && System.currentTimeMillis() < deadline) {
+                        Thread.sleep(50L)
+                    }
+                    Thread.sleep(200L)
                     startVService(serviceControl.getService())
                 }
 
