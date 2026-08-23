@@ -56,22 +56,10 @@ class RecommendedServersActivity : BaseActivity() {
                 subscriptionUrl = "https://alley.serv00.net/1"
             ),
             RecommendedServer(
-                name = "WL RUS",
-                description = "Бесплатные серверы для обхода блокировок",
-                telegramUrl = "https://t.me/wlrustg",
-                subscriptionUrl = "https://gitverse.ru/api/repos/bywarm/rser/raw/branch/master/selected.txt"
-            ),
-            RecommendedServer(
                 name = "#РКП",
                 description = "Бесплатные серверы для обхода блокировок",
                 telegramUrl = "https://t.me/RKP_channel",
-                subscriptionUrl = "https://raw.githubusercontent.com/RKPchannel/RKP_bypass_configs/refs/heads/main/configs/url_work.txt"
-            ),
-            RecommendedServer(
-                name = "Lowik_Live",
-                description = "Бесплатные серверы для обхода блокировок",
-                telegramUrl = "https://t.me/LowiK_Live",
-                subscriptionUrl = "https://raw.githubusercontent.com/LowiKLive/BypassWhitelistRu/refs/heads/main/WhiteList-Bypass_Ru.txt"
+                subscriptionUrl = "https://gitverse.ru/api/repos/RKP_channel/RKP_bypass_configs/raw/branch/master/whitelist.txt"
             )
         )
 
