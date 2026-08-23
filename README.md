@@ -9,7 +9,7 @@
 <p align="center">
   <a href="https://developer.android.com/studio/releases/platforms"><img src="https://img.shields.io/badge/Android-24%2B-a57fff?style=flat-square&labelColor=18181c" alt="Android 24+"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-GPL--3.0-a57fff?style=flat-square&labelColor=18181c" alt="GPL-3.0"></a>
-  <img src="https://img.shields.io/badge/version-1.2.8-a57fff?style=flat-square&labelColor=18181c" alt="1.2.8">
+  <img src="https://img.shields.io/badge/version-1.2.9-a57fff?style=flat-square&labelColor=18181c" alt="1.2.9">
   <a href="https://t.me/GoodbyeWLALT"><img src="https://img.shields.io/badge/Telegram-канал-26A5E4?style=flat-square&labelColor=18181c&logo=telegram&logoColor=white" alt="Telegram"></a>
 </p>
 
